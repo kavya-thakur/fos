@@ -1,14 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SocialX from "../assets/social-x.svg";
-import Socialinsta from "../assets/social-insta.svg";
-import SocialLinkedin from "../assets/social-linkedin.svg";
-import SocialPin from "../assets/social-pin.svg";
-
 const Footer = () => {
   return (
     <footer className="">
-      <div className=" container mx-auto  bg-black pt-10 pb-4">
+      <div className=" mx-auto  bg-black pt-10 pb-4">
         <nav className="flex md:flex-row flex-col justify-center items-center gap-4 text-white/50">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>

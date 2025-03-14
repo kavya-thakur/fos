@@ -1,71 +1,103 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import cylinderimage from "../assets/cylinder.png";
-import noodleimage from "../assets/noodle.png";
-import heroimage from "../assets/cog.png";
 import Logoticker from "./Logoticker";
 import Productshowcase from "./Productshowcase";
 import Testimonials from "./Testimonials";
 import Calltoaction from "./Calltoaction";
 import Footer from "./Footer";
+import ServicesSection from "./Services";
+import starbg from "../assets/stars.png";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const HeroSection = () => {
+  const constraintsRef = useRef(null)
   return (
     <>
-      <section className=" overflow-hidden pt-2 pb-20 md:mt-5 md:pb-10 lg:pb-10 lg:py-0 lg:mt-0 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_103%)] overflow-x-clip rounded-b-3xl">
-        <div className="container mx-auto px-4">
-          <div className="md:flex md:items-center">
-            <div className=" text-center md:text-left lg:px-10">
-              <h1 className="text-6xl md:text-7xl lg:text-[110px] md:w-[52%] font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6 mb-4">
-                Pathway to productivity
-              </h1>
-              <p className=" text-[#010D3E] mb-8 md:w-1/2">
-                {" "}
-                we offer expert frontend, backend, and DevOps services. Simply
-                submit your project details to get started and we'll connect
-                with you to discuss how we can help
-              </p>
-              <div className="md:w-1/2">
-                <input
-                  type="text"
-                  placeholder="Write the Requirement"
-                  className="w-full px-4 py-2 border border-[#010D3E]/60 rounded mb-5"
-                />
-                <span>
-                  <Link to={"/description"}>
-                    <button className="w-full px-4 py-2 rounded-md bg-black text-white text-sm">
-                      Submit
-                    </button>
-                  </Link>
-                </span>
-              </div>
+      <section
+        className="h-[712px]  md:h-[880px] flex items-center bg-black relative pt-28 overflow-hidden"
+        style={{
+          backgroundImage: `url(${starbg})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)]"></div>
+
+        {/* {start planet } */}
+        <div className="absolute bg-purple-500 rounded-full h-74 w-74 md:h-96 md:w-96 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_16.8%_18.3%,white,rgb(184,148,255)_37.7%,rgb(24,0,66))] shadow-[-20px_-20px_50px_rgb(255,255,255,.5),-20px_-20px_80px_rgb(255,255,255,.1),0_0_50px_rgb(140,69,255)]">
+          {/* ring one  */}
+          <motion.div
+          animate={{
+            rotate:'1turn',
+          }}
+          transition={{
+            repeat:Infinity,
+            ease:"linear",  
+            duration:50,
+          }}
+          className="absolute h-[344px] w-[344px] md:h-[580px] md:w-[580px] border rounded-full border-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  opacity-20">
+            <div className="h-2 w-2 bg-white absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+            <div className="h-2 w-2 bg-white absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+            <div className="h-5 w-5 bg-white absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+          </motion.div>
+          {/* ring 2 */}
+          <motion.div
+           animate={{
+            rotate:'-1turn',
+          }}
+          transition={{
+            repeat:Infinity,
+            ease:"linear",  
+            duration:90,
+          }}
+          className="rounded-full h-[444px] w-[444px] md:h-[780px] md:w-[780px] absolute border-dashed border border-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20"></motion.div>
+          {/* ring 3 */}
+          <motion.div
+           animate={{
+            rotate:'1turn',
+          }}
+          transition={{
+            repeat:Infinity,
+            ease:"linear",  
+            duration:50,
+          }}
+          className="absolute h-[544px] w-[544px] md:h-[980px] md:w-[980px] rounded-full border border-white  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20">
+            <div className="h-2 w-2 bg-white absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+            <div className="h-2 w-2 bg-white absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+            <div className="h-5 w-5 bg-white absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+          </motion.div>
+          {/* rings end  */}
+          {/* wraper div  */}
+          <div className="container mx-auto text-white h-screen w-full relative">
+            <h2 className="rounded-full px-4 py-2 bg-white/60 text-black font-semibold w-fit absolute -top-10 text-sm -left-12">
+              Version 2.0{" "}
+            </h2>
+            <div className="flex justify-center">
+            <h1 className="text-[20vw] md:text-[16vw] lg:text-[13vw]  font-semibold tracking-tighter text-white/80 text-center">
+              Fosnix
+            </h1>
             </div>
-            <div className="mt-5 md:mt-0 md:h-[648px] md:flex-1 relative ">
-              <img
-                className="md:absolute  md:h-full md:w-auto md:max-w-none md:-left-80 lg:-left-120 "
-                src={heroimage}
-                alt="cogimage"
-              />
-              <img
-                src={cylinderimage}
-                width={220}
-                height={220}
-                className="hidden md:block md:-left-134 -top-8 lg:-top-5 -left-32 md:absolute"
-                alt=""
-              />
-              <img
-                src={noodleimage}
-                width={220}
-                className="hidden lg:block top-[400px] md:block md:-left-0  left-[448px] md:absolute rotate-[30deg]"
-                alt=""
-              />
-            </div>
+            <p className="text-md text-white/70 mt-5 lg:-mt-10 text-center text-sm ">
+              We offer expert frontend, backend, and DevOps services Simply
+              submit your project details to get started and we'll connect with
+              you to discuss how we can help.
+            </p>
+            <motion.div 
+            ref={constraintsRef}
+            className="mt-30 flex justify-center">
+              <motion.button
+              dragConstraints={constraintsRef}
+              drag
+              whileDrag={{ scale: 0.9, rotate: 10 }}
+              className="px-4 py-2 bg-black/70 text-white/70 rounded-full ">
+                Create a project
+              </motion.button>
+            </motion.div>
           </div>
         </div>
       </section>
       <Logoticker />
       <Productshowcase />
       <Testimonials />
+      {/* <ServicesSection /> */}
       <Calltoaction />
       <Footer />
     </>

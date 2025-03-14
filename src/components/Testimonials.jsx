@@ -9,6 +9,7 @@ import avatar7 from "../assets/avatar-7.png";
 import avatar8 from "../assets/avatar-8.png";
 import avatar9 from "../assets/avatar-9.png";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
 const Testimonials = () => {
   const testimonials = [
     {
@@ -66,45 +67,58 @@ const Testimonials = () => {
       username: "@casey09",
     },
   ];
+  
   const firstCol = testimonials.slice(0, 3);
   const secCol = testimonials.slice(3, 6);
   const thirdCol = testimonials.slice(6, 9);
 
-  const TestimonialCol = ({ className, testimonials }) => (
-    <div
-    
-      className={twMerge(
-        "flex flex-col gap-5 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]",
-        className
-      )}
-    >
-      {testimonials.map(({ text, imageSrc, name, username, i }) => (
-        <div
-          key={name}
-          className="p-10 border border-[#222222]/20 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-sm w-full"
-        >
-          <div>{text}</div>
-          <div className="flex items-center gap-2 mt-5">
-            <img
-              src={imageSrc}
-              width={40}
-              height={40}
-              alt={name}
-              className="h-10 w-10 rounded-full"
-            />
+  const TestimonialCol = ({ className, testimonials , duration }) => (
+    <div className={( "",className)}  >
+      <motion.div
+      animate={{
+        translateY:'-50%'
+      }}
+      transition={{
+        repeat:Infinity,
+        duration:duration || 10,
+        ease:"linear",
+        repeatType:"loop"
+      }}
+      className={twMerge("flex flex-col gap-6 ", )}>
+        {[...new Array(2)].fill(0).map((_, index) => (
+          <React.Fragment key={index}>
+            {testimonials.map(({ text, imageSrc, name, username, i }) => (
+              <div
+                key={name}
+                className="p-10 border border-[#222222]/20 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-sm w-full"
+              >
+                <div>{text}</div>
+                <div className="flex items-center gap-2 mt-5">
+                  <img
+                    src={imageSrc}
+                    width={40}
+                    height={40}
+                    alt={name}
+                    className="h-10 w-10 rounded-full"
+                  />
 
-            <div className="flex flex-col">
-              <div className="font-bold tracking-tight leading-5">{name}</div>
-              <div className="tracking-tight leading-5">{username}</div>
-            </div>
-          </div>
-        </div>
-      ))}
+                  <div className="flex flex-col">
+                    <div className="font-bold tracking-tight leading-5">
+                      {name}
+                    </div>
+                    <div className="tracking-tight leading-5">{username}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </React.Fragment>
+        ))}
+      </motion.div>
     </div>
   );
 
   return (
-    <section className="bg-white py-2">
+    <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mt-10 mb-4">
           <div className=" text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight ">
@@ -115,18 +129,19 @@ const Testimonials = () => {
           What our users say
         </h2>
         <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
-        <p className="text-center text-md mt-3 mb-3">
-          from intuitive design to powerful features, our web has become an
-          essential platform for users around the world
-        </p>
+          <p className="text-center text-md mt-3 mb-3">
+            from intuitive design to powerful features, our web has become an
+            essential platform for users around the world
+          </p>
         </div>
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[768px] overflow-hidden">
           {/* <testimonials testimonials={firstCol}/> */}
-          <TestimonialCol testimonials={firstCol} className="" />
-          <TestimonialCol testimonials={secCol} className={`hidden md:flex`} />
+          <TestimonialCol testimonials={firstCol} className="" duration={15}/>
+          <TestimonialCol testimonials={secCol} className={`hidden md:block`} />
           <TestimonialCol
+          duration={20}
             testimonials={thirdCol}
-            className={"hidden lg:flex"}
+            className={"hidden lg:block"}
           />
         </div>
       </div>
