@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="fixed left-0 right-0 z-20 top-0 text-white ">
       <div className=" backdrop-blur-sm container mx-auto px-4 lg:px-20 flex justify-between itmes-center py-4">
-        <Link to={'/'}>
+        <Link to={"/"}>
           <img
             width={30}
             height={30}
@@ -41,7 +41,7 @@ const Header = () => {
         </nav>
       </div>
       {isOpen && (
-        <div className="md:hidden  backdrop-blur-md border border-black/30 p-4 m-1 rounded-xl mt-2 px-2">
+        <div className="md:hidden bg-white/70 border border-black/30 p-4 m-1 rounded-xl mt-2 px-2">
           <div className="flex flex-col gap-2 text-black/70 ">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>

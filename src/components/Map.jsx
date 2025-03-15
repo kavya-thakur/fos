@@ -149,7 +149,7 @@ const Map = () => {
                 dragConstraints={constraintsRef}
                 drag
                 whileDrag={{ scale: 0.9, rotate: 10 }}
-                className={` md:left-3 h-[350px] md:h-80 md:w-80 lg:h-[400px] lg:w-[450px] rounded-4xl p-6 relative bg-gradient-to-r ${step.bgColor}`}
+                className={` h-[350px] md:h-80 md:w-80 lg:h-[400px] lg:w-[450px] rounded-4xl p-6 relative bg-gradient-to-r ${step.bgColor}`}
               >
                 <h1 className="text-center text-4xl text-white/90 font-semibold mt-5 mb-5">
                   {step.title}
@@ -165,7 +165,7 @@ const Map = () => {
               // Fallback to a normal div for mobile without animation
               <div
                 key={index}
-                className={` md:left-3 h-[350px] md:h-80 md:w-80 lg:h-[400px] lg:w-[450px] rounded-4xl p-6 relative bg-gradient-to-r ${step.bgColor}`}
+                className={` h-[350px] md:h-80 md:w-80 lg:h-[400px] lg:w-[450px] rounded-4xl p-6 relative bg-gradient-to-r ${step.bgColor}`}
               >
                 <h1 className="text-center text-4xl text-white/90 font-semibold mt-5 mb-5">
                   {step.title}
