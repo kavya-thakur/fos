@@ -67,24 +67,25 @@ const Testimonials = () => {
       username: "@casey09",
     },
   ];
-  
+
   const firstCol = testimonials.slice(0, 3);
   const secCol = testimonials.slice(3, 6);
   const thirdCol = testimonials.slice(6, 9);
 
-  const TestimonialCol = ({ className, testimonials , duration }) => (
-    <div className={( "",className)}  >
+  const TestimonialCol = ({ className, testimonials, duration }) => (
+    <div className={("", className)}>
       <motion.div
-      animate={{
-        translateY:'-50%'
-      }}
-      transition={{
-        repeat:Infinity,
-        duration:duration || 10,
-        ease:"linear",
-        repeatType:"loop"
-      }}
-      className={twMerge("flex flex-col gap-6 ", )}>
+        animate={{
+          translateY: "-50%",
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: duration || 10,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+        className={twMerge("flex flex-col gap-6 ")}
+      >
         {[...new Array(2)].fill(0).map((_, index) => (
           <React.Fragment key={index}>
             {testimonials.map(({ text, imageSrc, name, username, i }) => (
@@ -125,21 +126,44 @@ const Testimonials = () => {
             Testimonials
           </div>
         </div>
-        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text capitalize">
+        <motion.h2
+          initial={{ opacity:0}}
+          // animate={{opacity:1 , y:'0'}}
+          whileInView={{
+            opacity:1,
+            transition: {
+              duration: 0.7,
+              ease: "easeInOut",
+              delay: 0.1,
+            },
+          }}
+          className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text capitalize"
+        >
           What our users say
-        </h2>
+        </motion.h2>
         <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
-          <p className="text-center text-md mt-3 mb-3">
+          <motion.p
+           initial={{ opacity:0}}
+           // animate={{opacity:1 , y:'0'}}
+           whileInView={{
+             opacity:1,
+             transition: {
+               duration: 0.7,
+               ease: "easeInOut",
+               delay: 0.2,
+             },
+           }}
+          className="text-center text-md mt-3 mb-3">
             from intuitive design to powerful features, our web has become an
             essential platform for users around the world
-          </p>
+          </motion.p>
         </div>
         <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[768px] overflow-hidden">
           {/* <testimonials testimonials={firstCol}/> */}
-          <TestimonialCol testimonials={firstCol} className="" duration={15}/>
+          <TestimonialCol testimonials={firstCol} className="" duration={15} />
           <TestimonialCol testimonials={secCol} className={`hidden md:block`} />
           <TestimonialCol
-          duration={20}
+            duration={20}
             testimonials={thirdCol}
             className={"hidden lg:block"}
           />

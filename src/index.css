@@ -7,3 +7,9 @@
 /* body {
   background-color: #eaeefe;
 } */
+.line{
+  @apply overflow-hidden;
+}
+.word{
+  @apply translate-y-full
+}
