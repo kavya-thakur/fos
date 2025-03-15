@@ -7,7 +7,8 @@ import Submit from "./components/Submit";
 import About from "./components/About";
 // import useLenis from "../src/useLenis";
 import LoginPage from "./components/LoginPage";
-import useLenis from "./uselenis";
+import useLenis from "./hooks/useLenis";
+
 // import Description from "./components/Description";
 
 const App = () => {
