@@ -91,7 +91,7 @@ const Description = () => {
   };
 
   return (
-    <section>
+    <section className="mt-10">
       <form
         onSubmit={addproducthandler}
         className="h-screen w-screen p-[5%] flex flex-col items-center"
