@@ -1,15 +1,15 @@
-// src/hooks/useLenis.js
-import { useEffect } from "react";
-import Lenis from "lenis";
+import { useEffect } from 'react';
+import Lenis from 'lenis';
 
 const useLenis = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2, // Scroll duration
-      smoothWheel: true, // Smooth scroll for wheel events
-      smoothTouch: true, // Disable smooth scroll for touch devices
+      lerp: 0.1,  // Defines smoothness of the scroll
+      smoothWheel: true,  // Enables smooth scroll for mouse wheel
+      smoothTouch: false,  // Disables smooth scrolling for touch (optional)
     });
 
+    // Animation frame loop
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -18,7 +18,7 @@ const useLenis = () => {
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy();
+      lenis.destroy(); // Cleanup on unmount
     };
   }, []);
 };
