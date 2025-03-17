@@ -12,8 +12,6 @@ import Step4 from "./Step4";
 import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { HeroScrollDemo } from "./pp";
-import { GridBackgroundDemo } from "./Background";
 const HeroSection = () => {
   // for cursor animation
 
