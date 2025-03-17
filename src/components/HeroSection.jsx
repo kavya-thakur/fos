@@ -149,18 +149,14 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <div className="relative min-h-screen">
+      <div className="relative">
         <Step1 />
         <Step2 />
         <Step3 />
         <Step4 />
       </div>
-      <div>
-       <Productshowcase/>
-      </div>
-      <div className="relative ">
-        <Marque />
-      </div>
+      <Productshowcase />
+      <Marque />
       <Testimonials />
       <Footer />
     </>
