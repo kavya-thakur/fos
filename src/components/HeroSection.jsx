@@ -122,7 +122,7 @@ const HeroSection = () => {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-md text-white/70 mt-5 lg:-mt-10 text-center text-sm "
+              className="text-md text-white/70 mt-5 lg:-mt-10 text-center text-sm lg:text-[1.2vw] "
             >
               We offer expert frontend, backend, and DevOps services Simply
               submit your project details to get started and we'll connect with
@@ -132,7 +132,7 @@ const HeroSection = () => {
               <input
                 type="text"
                 placeholder={placeholder}
-                className=" "
+                className="border-none outline-none"
               ></input>
 
               <Link to={"/description"}>

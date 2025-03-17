@@ -13,3 +13,50 @@ body {
 .word{
   @apply translate-y-full
 }
+
+.hero-1{
+  animation-name:anime1 ;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.jelly-shape{
+  animation-name:anime1 ;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes anime1 {
+  from{
+    transform: translate(-20%, 10%);
+  }
+  to{
+    transform: translate(10%, -20%,);
+
+  }
+}
+
+@keyframes jelly {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.1) translateY(-10px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.9) translateY(10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -129,7 +129,7 @@ const Testimonials = () => {
           </div>
         </div>
         <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight text-white capitalize">
-          What our users say
+          What our  users say
         </h2>
         <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
           <p className="text-center text-md mt-3 mb-3">

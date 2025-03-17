@@ -1,19 +1,27 @@
-
 import React from "react";
 
 const Step4 = () => {
   return (
-    <section className="sticky top-0 bg-[#750E21]  h-screen w-full rounded-t-4xl ">
+    <section className="sticky top-0 bg-[#750E21]  h-screen w-full rounded-t-4xl overflow-hidden">
+      {/* shapes animation start  */}
+      <div className="absolute flex justify-center items-center w-[56vw] h-[56vw] top-[59%] right-0 md:top-[29%] lg:-right-90">
+        {/* Jelly Shape 1 */}
+        <div className="jelly-shape jelly-shape-1 h-64 w-64 absolute bg-white/90 rounded-full blur-[20px] md:h-[50vw] md:w-[50vw] lg:h-[40vw] lg:w-[40vw] "></div>
+        {/* Jelly Shape 2 */}
+        <div className="jelly-shape jelly-shape-2 h-64 w-64 absolute bg-white/40 rounded-full blur-[90px] md:h-[50vw] md:w-[50vw] lg:h-[40vw] lg:w-[40vw]"></div>
+      </div>
+      {/* shapes animation ends  */}
       <div className="container mx-auto px-4  ">
         <div className=" text-white capitalize pt-20">
-          <h1 className="text-6xl tracking-tight font-light bg-gradient-to-r from-neutral-300 to-stone-400  text-transparent bg-clip-text">
-          The final step  {" "}
+          <h1 className="text-6xl md:text-[6.9vw] tracking-tight font-light bg-gradient-to-r from-neutral-300 to-stone-400  text-transparent bg-clip-text">
+            The final step{" "}
           </h1>
           <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800  text-transparent bg-clip-text  text-6xl tracking-tight mt-5 mb-10 pb-4 ">
-           Project Completion
+            Project Completion
           </h2>
-          <p className="bg-gradient-to-r from-neutral-300 to-stone-400  text-transparent bg-clip-text text-lg">
-          The assigned developer will complete your project and notify you once the work is done, ready for delivery.
+          <p className="bg-gradient-to-r from-neutral-300 to-stone-400  text-transparent bg-clip-text text-lg md:text-[2vw] md:w-1/2">
+            The assigned developer will complete your project and notify you
+            once the work is done, ready for delivery.
           </p>
         </div>
       </div>

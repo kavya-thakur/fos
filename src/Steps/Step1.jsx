@@ -14,17 +14,26 @@ const Step1 = () => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="sticky top-0 bg-[#2C3333] h-screen w-full rounded-t-2xl"
+      className="sticky top-0  h-screen w-full rounded-t-2xl"
     >
+      {/* spapes animation  */}
+      <div className="absolute flex justify-center items-center w-[56vw] h-[56vw] top-[59%] right-0 lg:top-[35%]">
+        {/* Jelly Shape 1 */}
+        <div className="jelly-shape jelly-shape-1 h-64 w-64 absolute bg-[#9b4dff] rounded-full blur-[20px] lg:h-[40vw] lg:w-[40vw]"></div>
+        {/* Jelly Shape 2 */}
+        <div className="jelly-shape jelly-shape-2 h-64 w-64 absolute bg-[#6a1b9a] rounded-full blur-[20px] lg:h-[40vw] lg:w-[40vw]"></div>
+      </div>
+      {/* </div> */}
+      {/* shapes animation end  */}
       <div className="container mx-auto px-4 pt-20 mt-14">
         <div className="text-white capitalize">
-          <h1 className="text-6xl tracking-tight font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text">
+          <h1 className="text-6xl md:text-[7.5vw] tracking-tight font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text">
             Step one{" "}
           </h1>
-          <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl tracking-tight mt-5 mb-10 pb-4 md:text-6xl">
+          <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl tracking-tight mt-5 mb-10 pb-4 md:text-6xl ">
             Create and submit project
           </h2>
-          <p className="bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg">
+          <p className="bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg md:text-[2vw] md:w-1/2">
             Click on the 'Create Project' button, fill out the necessary details
             of your project, and submit the form for review.
           </p>

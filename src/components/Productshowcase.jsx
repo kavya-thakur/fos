@@ -6,7 +6,7 @@ const Productshowcase = () => {
   return (
     <>
       {" "}
-      <section className="relative bg-black py-24">
+      <section className="relative bg-black py-24 lg:py-[13vw]">
         <GridBackgroundDemo />
         <div className="z-10  inset-0 flex items-center justify-center flex-col absolute container mx-auto px-4">
           <div className="flex justify-center mb-4">
