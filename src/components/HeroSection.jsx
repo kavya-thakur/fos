@@ -12,6 +12,7 @@ import Step4 from "./Step4";
 import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Stepwrapper from "./Stepwrapper";
 const HeroSection = () => {
   // for cursor animation
 
@@ -147,12 +148,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <div className="relative">
-        <Step1 />
-        <Step2 />
-        <Step3 />
-        <Step4 />
-      </div>
+     <Stepwrapper/>
       <Productshowcase />
       <Marque />
       <Testimonials />
