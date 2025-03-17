@@ -15,7 +15,7 @@ const Step2 = () => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="sticky top-0 bg-[#522258] h-screen w-full overflow-hidden rounded-t-4xl"
+      className="sticky top-0 bg-[#522258] h-screen w-full  rounded-t-4xl"
     >
       <div className="container mx-auto px-4 pt-20 mt-14">
         <div className="text-black capitalize pt-20">
