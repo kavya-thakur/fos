@@ -5,16 +5,14 @@ import { Route, Routes } from "react-router-dom";
 import Description from "./components/Description";
 import Submit from "./components/Submit";
 import About from "./components/About";
-// import useLenis from "../src/useLenis";
 import LoginPage from "./components/LoginPage";
-import useLenis from "./hooks/useLenis";
 
-// import Description from "./components/Description";
+import LocomotiveScroll from "locomotive-scroll";
 
 const App = () => {
-  useLenis(); // Hook to programmatically navigate
+  const locomotiveScroll = new LocomotiveScroll();
   return (
-    <div>
+    <div className="">
       <Header />
       <Routes>
         <Route path="/" element={<HeroSection />} />

@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 * {
-  font-family: "DM Sans", "sans-serif";
+  font-family:"", "DM Sans", "sans-serif";
 }
-/* body {
-  background-color: #eaeefe;
-} */
+body {
+  background-color: black;
+}
 .line{
   @apply overflow-hidden;
 }

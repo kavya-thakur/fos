@@ -91,7 +91,7 @@ const Testimonials = () => {
             {testimonials.map(({ text, imageSrc, name, username, i }) => (
               <div
                 key={name}
-                className="p-10 border border-[#222222]/20 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-sm w-full"
+                className="p-10 border border-white/20 shadow-2xl rounded-3xl  max-w-sm w-full"
               >
                 <div>{text}</div>
                 <div className="flex items-center gap-2 mt-5">
@@ -119,47 +119,25 @@ const Testimonials = () => {
   );
 
   return (
-    <section className="bg-white py-20">
+    <section 
+    
+    className="bg-black text-white py-20">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mt-10 mb-4">
-          <div className=" text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight ">
+          <div className=" text-sm inline-flex border border-white/70 px-3 py-1 rounded-lg tracking-tight ">
             Testimonials
           </div>
         </div>
-        <motion.h2
-          initial={{ opacity:0}}
-          // animate={{opacity:1 , y:'0'}}
-          whileInView={{
-            opacity:1,
-            transition: {
-              duration: 0.7,
-              ease: "easeInOut",
-              delay: 0.1,
-            },
-          }}
-          className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text capitalize"
-        >
+        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight text-white capitalize">
           What our users say
-        </motion.h2>
+        </h2>
         <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
-          <motion.p
-           initial={{ opacity:0}}
-           // animate={{opacity:1 , y:'0'}}
-           whileInView={{
-             opacity:1,
-             transition: {
-               duration: 0.7,
-               ease: "easeInOut",
-               delay: 0.2,
-             },
-           }}
-          className="text-center text-md mt-3 mb-3">
+          <p className="text-center text-md mt-3 mb-3">
             from intuitive design to powerful features, our web has become an
             essential platform for users around the world
-          </motion.p>
+          </p>
         </div>
         <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[768px] overflow-hidden">
-          {/* <testimonials testimonials={firstCol}/> */}
           <TestimonialCol testimonials={firstCol} className="" duration={15} />
           <TestimonialCol testimonials={secCol} className={`hidden md:block`} />
           <TestimonialCol
