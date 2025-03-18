@@ -12,7 +12,7 @@ const Marque = () => {
             }}
             animate={{ x: "-100%" }}
             transition={{ ease: "linear", repeat: Infinity, duration: 3 }}
-            className="text-[14vw] leading-none font-semibold uppercase  pl-10"
+            className="text-[14vw] md:text-[10vw] leading-none font-semibold uppercase  pl-10"
           >
             We Are Fosnix{" "}
           </motion.h1>
@@ -22,7 +22,17 @@ const Marque = () => {
             }}
             animate={{ x: "-100%" }}
             transition={{ ease: "linear", repeat: Infinity, duration: 3 }}
-            className="text-[14vw] leading-none font-semibold uppercase  pl-10"
+            className="text-[14vw] md:text-[10vw] leading-none font-semibold uppercase  pl-10"
+          >
+            We Are Fosnix{" "}
+          </motion.h1>
+          <motion.h1
+            initial={{
+              x: 0,
+            }}
+            animate={{ x: "-100%" }}
+            transition={{ ease: "linear", repeat: Infinity, duration: 3 }}
+            className="text-[14vw] md:text-[10vw] leading-none font-semibold uppercase  pl-10"
           >
             We Are Fosnix{" "}
           </motion.h1>

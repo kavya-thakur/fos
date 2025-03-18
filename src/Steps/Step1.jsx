@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
-
+// import create from ""
 const Step1 = () => {
   const container = useRef();
   const { scrollYProgress } = useScroll({
@@ -26,17 +26,19 @@ const Step1 = () => {
       {/* </div> */}
       {/* shapes animation end  */}
       <div className="container mx-auto px-4 pt-20 mt-14">
-        <div className="text-white capitalize">
-          <h1 className="text-6xl md:text-[7.5vw] tracking-tight font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text">
-            Step one{" "}
-          </h1>
-          <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl tracking-tight mt-5 mb-10 pb-4 md:text-6xl ">
-            Create and submit project
-          </h2>
-          <p className="bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg md:text-[2vw] md:w-1/2">
-            Click on the 'Create Project' button, fill out the necessary details
-            of your project, and submit the form for review.
-          </p>
+        <div className="text-white capitalize flex flex-col md:flex-row">
+          <div className="">
+            <h1 className="text-6xl md:text-[7.5vw] tracking-tight font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text">
+              Step one{" "}
+            </h1>
+            <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl tracking-tight mt-5 mb-10 pb-4 md:text-6xl ">
+              Create and submit project
+            </h2>
+            <p className="bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg md:text-[2vw] md:w-1/2">
+              Click on the 'Create Project' button, fill out the necessary
+              details of your project, and submit the form for review.
+            </p>
+          </div>
         </div>
       </div>
     </motion.section>

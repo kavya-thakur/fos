@@ -11,25 +11,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Stepwrapper from "./Stepwrapper";
 const HeroSection = () => {
-  // for cursor animation
-
-  const [mousePosition, setmousePosition] = useState({ x: 0, y: 0 });
-  useGSAP(() => {
-    const mouseMove = (e) => {
-      setmousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-    window.addEventListener("mousemove", mouseMove);
-    gsap.to(".cursor", {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      duration: 0.8,
-      ease: "power1",
-    });
-  }, [mousePosition]);
-  // for input animation
 
   const [placeholder, setPlaceholder] = useState("Loading...");
   const placeholders = [
@@ -55,14 +36,13 @@ const HeroSection = () => {
   return (
     <>
       <section
-        className="h-screen bg-black overflow-hidden relative"
+        className="h-screen min-w-[100%] bg-black overflow-hidden relative"
         style={{
           backgroundImage: `url(${starbg})`,
           backgroundSize: "cover",
         }}
       >
-        {/* custom cursor */}
-        {/* <div className="cursor h-6 w-6 rounded-full bg-white/80 fixed z-20"></div> */}
+       
         {/* <div className=" absolute inset-0 bg-[radial-gradient(75%_75%_at_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)]"></div> */}
 
         {/* {start planet } */}
@@ -122,7 +102,7 @@ const HeroSection = () => {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-md text-white/70 mt-5 lg:-mt-10 text-center text-sm lg:text-[1.2vw] "
+              className="text-md text-white/70 mt-5 lg:-mt-10 text-center text-sm md:text-[1vw] "
             >
               We offer expert frontend, backend, and DevOps services Simply
               submit your project details to get started and we'll connect with

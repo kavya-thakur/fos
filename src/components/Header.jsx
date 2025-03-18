@@ -26,7 +26,7 @@ const Header = () => {
           <Link to="/about">About Us</Link>
           <Link to="/services">Services</Link>
           <Link to="/login">
-            <button className="px-5 py-2 lg:px-8 text-black font-semibold text-sm bg-white/90 rounded-full tracking-wider flex itmes-center justify-center items-center">
+            <button className="px-5 py-2 lg:px-8 text-white/80 font-light border border-white/40 text-sm rounded-full tracking-wider flex itmes-center justify-center items-center">
               Log in
             </button>
           </Link>

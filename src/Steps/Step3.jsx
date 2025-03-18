@@ -3,19 +3,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const Step3 = () => {
   const container = useRef();
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, -2]);
 
   return (
-    <motion.section
-      style={{ scale, rotate }}
-      className="sticky top-0 bg-[#1A3636] h-screen w-full rounded-t-2xl"
-    >
+    <motion.section className="sticky top-0 bg-[#1A3636] overflow-hidden h-screen w-full rounded-t-2xl">
       {/* spape animation  */}
       <div className="absolute flex justify-center items-center w-[56vw] h-[56vw] top-[59%] right-0 md:top-[29%] lg:top-[35%]">
         {/* Jelly Shape 1 */}

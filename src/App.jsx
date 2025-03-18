@@ -12,8 +12,7 @@
 // const App = () => {
 //   const locomotiveScroll = new LocomotiveScroll();
 //   console.log(locomotiveScroll)
-  
-  
+
 //   return (
 //     <div className="">
 //       <Header />
@@ -42,6 +41,7 @@ import Description from "./components/Description";
 import Submit from "./components/Submit";
 import About from "./components/About";
 import LoginPage from "./components/LoginPage";
+import Home from "./components/Home";
 
 const App = () => {
   useEffect(() => {
@@ -63,7 +63,8 @@ const App = () => {
     <div className="scroll-container">
       <Header />
       <Routes>
-        <Route path="/" element={<HeroSection />} />
+        {/* <Route path="/" element={<HeroSection />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/description" element={<Description />} />
         <Route path="/submitted" element={<Submit />} />
         <Route path="/about" element={<About />} />
