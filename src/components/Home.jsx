@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length); // Loop through the words
-    }, 4000); // Change the word every 4 seconds (adjust this as needed)
+    }, 1800); // Change the word every 4 seconds (adjust this as needed)
 
     return () => clearInterval(interval); // Clean up the interval when the component is unmounted
   }, []);
