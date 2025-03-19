@@ -5,6 +5,8 @@ import Stepwrapper from "./Stepwrapper";
 import Productshowcase from "./Productshowcase";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
+import { useRef } from "react";
+
 const Home = () => {
   const words = ["Frontend", "Backend", "DevOps"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -15,6 +17,54 @@ const Home = () => {
 
     return () => clearInterval(interval); // Clean up the interval when the component is unmounted
   }, []);
+
+  //  animatino for input
+  const phrases = [
+    "EEnter your details  ",
+
+    "WWrite requirements  ",
+    "EEnter your project   ",
+  ];
+
+  const [currentText, setCurrentText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [cursorVisible, setCursorVisible] = useState(true);
+
+  // Ref to track the typing progress without causing re-renders
+  const typingProgress = useRef(0);
+
+  useEffect(() => {
+    const phrase = phrases[index]; // Get the current phrase
+    typingProgress.current = 0; // Reset typing progress for each phrase
+    setCurrentText(""); // Reset the current text before typing
+
+    const typingInterval = setInterval(() => {
+      // Add one character at a time to the text
+      setCurrentText((prev) => prev + phrase[typingProgress.current]);
+      typingProgress.current++;
+
+      if (typingProgress.current === phrase.length) {
+        clearInterval(typingInterval); // Stop typing once the phrase is fully typed
+      }
+    }, 150); // Adjust typing speed here (150ms)
+
+    // Cycle to the next phrase after 3 seconds (when typing is done)
+    const phraseChangeInterval = setTimeout(() => {
+      setIndex((prev) => (prev + 1) % phrases.length); // Cycle through the phrases
+    }, 3000); // Change phrase after 3 seconds
+
+    // Blinking cursor effect
+    const cursorInterval = setInterval(() => {
+      setCursorVisible((prev) => !prev); // Toggle the cursor visibility
+    }, 500); // Cursor blink speed
+
+    // Cleanup the intervals on component unmount or index change
+    return () => {
+      clearInterval(cursorInterval);
+      clearTimeout(phraseChangeInterval);
+      clearInterval(typingInterval);
+    };
+  }, [index]); // Runs when the index changes (i.e., phrase changes)
   return (
     <>
       <section>
@@ -36,7 +86,9 @@ const Home = () => {
 
               <div className="flex justify-center items-center gap-2 md:gap-4 mt-[10vw] md:mt-[3vw]">
                 {/* Static "We offer" text */}
-                <h1 className="text-4xl md:text-5xl 2xl:text-[3.4vw] font-semibold text-white/70">We offer</h1>
+                <h1 className="text-4xl md:text-5xl 2xl:text-[3.4vw] font-semibold text-white/70">
+                  We offer
+                </h1>
 
                 {/* Animated word */}
                 <motion.div
@@ -53,11 +105,18 @@ const Home = () => {
               </div>
               {/* end  */}
               <div className="relative mt-[10vw] md:mt-[3vw] md:w-1/2 flex justify-center items-center mx-auto bg-black border border-white/20 text-white rounded-full 2xl:px-[2vw] 2xl:py-[0.5vw]">
-                <input
+                {/* <input
                   type="text"
                   placeholder="Enter you dets"
                   className="px-3 py-3 w-full 2xl:text-xl outline-none"
 
+                /> */}
+                <motion.input
+                  type="text"
+                  className="px-3 py-3 w-full 2xl:text-xl outline-none"
+                  placeholder={`${currentText}${cursorVisible ? "|" : ""}`} // Add blinking cursor
+                  // readOnly
+                  autoFocus
                 />
                 <button className="text-black text-sm absolute top-1/2 -translate-y-1/2 right-2 px-4 py-2 font-light bg-white rounded-full 2xl:px-[2vw] 2xl:py-[0.8vw] 2xl:text-[0.9vw]">
                   Search
