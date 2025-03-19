@@ -11,7 +11,7 @@ const Step4 = () => {
     },
   };
   return (
-    <section className="sticky top-0 bg-[#750E21]  h-screen min-w-full md:max-h-[1300px] rounded-t-4xl overflow-hidden">
+    <section className="sticky top-0 bg-[#750E21]  h-screen w-full md:max-h-[1300px] rounded-t-4xl overflow-hidden">
       {/* shapes animation start  */}
       <div className="absolute flex justify-center items-center w-[56vw] h-[56vw] top-[59%] right-0 md:top-[29%] lg:-right-90">
         {/* Jelly Shape 1 */}

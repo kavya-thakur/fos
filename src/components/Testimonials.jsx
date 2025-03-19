@@ -75,15 +75,15 @@ const Testimonials = () => {
   const TestimonialCol = ({ className, testimonials, duration }) => (
     <div className={("", className)}>
       <motion.div
-        animate={{
-          translateY: "-50%",
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: duration || 10,
-          ease: "linear",
-          repeatType: "loop",
-        }}
+        // animate={{
+        //   translateY: "-50%",
+        // }}
+        // transition={{
+        //   repeat: Infinity,
+        //   duration: duration || 10,
+        //   ease: "linear",
+        //   repeatType: "loop",
+        // }}
         className={twMerge("flex flex-col gap-6 ")}
       >
         {[...new Array(2)].fill(0).map((_, index) => (
