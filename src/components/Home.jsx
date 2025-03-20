@@ -6,6 +6,7 @@ import Productshowcase from "./Productshowcase";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const words = ["Frontend", "Backend", "DevOps"];
@@ -65,6 +66,13 @@ const Home = () => {
       clearInterval(typingInterval);
     };
   }, [index]); // Runs when the index changes (i.e., phrase changes)
+
+  // div size increase
+  const [isClicked, setIsClicked] = useState(false); // State to track click
+
+  const handleDivClick = () => {
+    setIsClicked(!isClicked); // Toggle the click state
+  };
   return (
     <>
       <section>
@@ -86,7 +94,7 @@ const Home = () => {
 
               <div className="flex justify-center items-center gap-2 md:gap-4 mt-[10vw] md:mt-[3vw]">
                 {/* Static "We offer" text */}
-                <h1 className="text-4xl md:text-5xl 2xl:text-[3.4vw] font-semibold text-white/70">
+                <h1 className="text-3xl md:text-5xl 2xl:text-[3.4vw] font-semibold text-white/70 tracking-tighter font-['Aboreto']">
                   We offer
                 </h1>
 
@@ -98,47 +106,29 @@ const Home = () => {
                   exit={{ opacity: 0, y: -30 }} // Exit state, fade out and move up
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <span className=" font-medium text-4xl  2xl:text-[3.4vw] md:text-5xl bg-gradient-to-r from-violet-200 to-pink-200 bg-clip-text text-transparent tracking-tight">
+                  <span className="font-['Aboreto'] font-medium text-3xl  2xl:text-[3.4vw] md:text-5xl bg-gradient-to-r from-violet-200 to-pink-200 bg-clip-text text-transparent tracking-tighter ">
                     {words[currentWordIndex]}
                   </span>
                 </motion.div>
               </div>
               {/* end  */}
-              <div className="relative mt-[10vw] md:mt-[3vw] md:w-1/2 flex justify-center items-center mx-auto bg-black border border-white/20 text-white rounded-full 2xl:px-[2vw] 2xl:py-[0.5vw]">
-                {/* <input
-                  type="text"
-                  placeholder="Enter you dets"
-                  className="px-3 py-3 w-full 2xl:text-xl outline-none"
-
-                /> */}
+              <div
+                onClick={handleDivClick} // Handle the click event
+                className={`relative mt-[10vw] md:mt-[3vw] md:w-1/2 flex justify-center items-center mx-auto bg-black border border-white/20 text-white rounded-full 2xl:px-[2vw] 2xl:py-[0.5vw] transition-all duration-300 ${
+                  isClicked ? "scale-120" : "scale-100"
+                }`}
+              >
                 <motion.input
                   type="text"
-                  className="px-3 py-3 w-full 2xl:text-xl outline-none"
+                  className="px-3 py-3 w-[100%] 2xl:text-xl outline-none "
                   placeholder={`${currentText}${cursorVisible ? "|" : ""}`} // Add blinking cursor
-                  // readOnly
                   autoFocus
                 />
-                <button className="text-black text-sm absolute top-1/2 -translate-y-1/2 right-2 px-4 py-2 font-light bg-white rounded-full 2xl:px-[2vw] 2xl:py-[0.8vw] 2xl:text-[0.9vw]">
-                  Search
-                </button>
-              </div>
-              <div className="text-white/70 absolute bottom-25 md:bottom-35 2xl:bottom-10 right-1/2 translate-x-1/2">
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }} // Start with opacity 0 and slightly moved down
-                  animate={{
-                    opacity: [0, 1, 0], // Animate from 0 (hidden) to 1 (visible) and back to 0
-                    y: [20, 0, -20], // Animate from below to normal position, then slightly up
-                  }}
-                  transition={{
-                    duration: 1, // Duration for one full cycle (fade in and out)
-                    ease: "easeInOut", // Smooth easing function
-                    repeat: Infinity, // Repeat indefinitely
-                    repeatDelay: 0.5, // Delay between repeats, effectively creating the 1 second loop
-                  }}
-                  className="text-[5vw] md:text-[2vw] text-center leading-none tracking-tight"
-                >
-                  Scroll me to see the steps
-                </motion.h2>
+                <Link to={"/description"}>
+                  <button className="text-black text-sm absolute top-1/2 -translate-y-1/2 right-2 px-4 py-2 font-light bg-white rounded-full 2xl:px-[2vw] 2xl:py-[0.8vw] 2xl:text-[0.9vw]">
+                    Search
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

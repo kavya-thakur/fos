@@ -128,7 +128,7 @@ const Testimonials = () => {
             Testimonials
           </div>
         </div>
-        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight text-white capitalize">
+        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight text-white/90 capitalize font-['Aboreto'] my-5">
           What our  users say
         </h2>
         <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
