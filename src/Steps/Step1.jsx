@@ -27,19 +27,19 @@ const Step1 = () => {
       <div className="container mx-auto px-4 pt-20 md:pt-0 ">
         <div className="text-white capitalize flex flex-col md:flex-row md:gap-[20vw] overflow-hidden md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 ">
           <div className="">
-            <h1 className="text-6xl md:text-[7.5vw] tracking-tighter font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text font-['Aboreto']">
+            <h1 className="text-6xl md:text-[7.5vw] tracking-tighter font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text ">
               Step one{" "}
             </h1>
             <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl tracking-tight mt-5 mb-10 pb-4 md:text-6xl ">
               Create and submit project
             </h2>
-            <p className="font-['Aboreto'] bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg md:text-[1.6vw] md:w-[70%]">
+            <p className=" bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg md:text-[1.6vw] md:w-[70%]">
               Click on the 'Create Project' button, fill out the necessary
               details of your project, and submit the form for review.
             </p>
           </div>
           <div className="md:h-[20vw] md:w-[50vw] lg:h-[30vw] lg:w-[40vw]">
-            <Lottie options={defaultOptions} />
+            <Lottie  options={defaultOptions} />
           </div>
         </div>
       </div>

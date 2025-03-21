@@ -88,13 +88,13 @@ const Home = () => {
             <div className="pt-[40vw] md:pt-[40vw] lg:pt-[10vw] 2xl:max-pt-[40vw]">
               <div className="lg:max-w-[80%] md:max-w-[70%] flex justify-center items-center mx-auto">
                 <h1 className="bg-gradient-to-br from-slate-50 to-zinc-400 bg-clip-text text-transparent font-semibold text-[11vw] md:text-[6.5vw] text-center tracking-tight leading-none ">
-                  One search bar for your projects
+                  One <span className="text-purple-500">search</span> bar for your projects
                 </h1>
               </div>
 
               <div className="flex justify-center items-center gap-2 md:gap-4 mt-[10vw] md:mt-[3vw]">
                 {/* Static "We offer" text */}
-                <h1 className="text-3xl md:text-5xl 2xl:text-[3.4vw] font-semibold text-white/70 tracking-tighter font-['Aboreto']">
+                <h1 className="text-3xl md:text-5xl 2xl:text-[3.4vw] font-semibold text-white/70 tracking-tighter ">
                   We offer
                 </h1>
 
@@ -106,7 +106,7 @@ const Home = () => {
                   exit={{ opacity: 0, y: -30 }} // Exit state, fade out and move up
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <span className="font-['Aboreto'] font-medium text-3xl  2xl:text-[3.4vw] md:text-5xl bg-gradient-to-r from-violet-200 to-pink-200 bg-clip-text text-transparent tracking-tighter ">
+                  <span className=" font-medium text-3xl  2xl:text-[3.4vw] md:text-5xl bg-gradient-to-r from-violet-200 to-pink-200 bg-clip-text text-transparent tracking-tighter ">
                     {words[currentWordIndex]}
                   </span>
                 </motion.div>

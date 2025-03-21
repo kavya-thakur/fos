@@ -1,253 +1,128 @@
-
-
-// import React, { useState, useEffect, useRef } from "react";
-// import { Link } from "react-router-dom";
-// import { motion } from "framer-motion";
-
-// const Footer = () => {
-//   const [inView, setInView] = useState(false);
-//   const footerRef = useRef(null);
-
-//   // Intersection Observer setup
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         const entry = entries[0];
-//         if (entry.isIntersecting) {
-//           setInView(true); // Set state to true when the footer comes into view
-//         } else {
-//           setInView(false); // Set state to false when the footer goes out of view
-//         }
-//       },
-//       {
-//         threshold: 0.4, // Trigger when 50% of the footer is in view
-//       }
-//     );
-
-//     if (footerRef.current) {
-//       observer.observe(footerRef.current); // Observe the footer element
-//     }
-
-//     // Cleanup the observer on component unmount
-//     return () => {
-//       if (footerRef.current) {
-//         observer.unobserve(footerRef.current);
-//       }
-//     };
-//   }, []);
-
-//   // Split text into letters for animation
-//   const splitText = (text) => {
-//     return text.split("").map((char, index) => (
-//       <motion.span
-//         key={index}
-//         initial={{ opacity: 0, y: 20 }}
-//         animate={{
-//           opacity: inView ? 1 : 0,
-//           y: inView ? 0 : 20,
-//         }}
-//         transition={{
-//           delay: index * 0.1, // Stagger the animations
-//           duration: 0.5,
-//           ease: "easeOut",
-//         }}
-//       >
-//         {char}
-//       </motion.span>
-//     ));
-//   };
-
-//   return (
-//     <footer
-//       ref={footerRef}
-//       className="h-[80vh] md:h-[60vh] w-full relative mx-auto"
-//       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-//     >
-//       <motion.div
-//         className="fixed bottom-0 w-full h-[80vh] md:h-[60vh] bg-white/90 pt-20"
-//         initial={{ opacity: 0 }}
-//         animate={{
-//           opacity: inView ? 1 : 0,
-//         }}
-//         transition={{ duration: 1, ease: "easeOut" }}
-//       >
-//         <div className="container mx-auto px-4 bottom-0">
-//           {/* Footer Content with Text Animation */}
-//           <div className="footer-text text-black/90 pb-7">
-//             <h3 className="text-5xl md:text-7xl">
-//               {splitText("Fosnix")} {/* Split and animate each letter */}
-//             </h3>
-//             <p className="font-extralight md:text-3xl mt-4">
-//               {splitText("We Provide Best Services")}{" "}
-//               {/* Split and animate each letter */}
-//             </p>
-//           </div>
-
-//           {/* Footer Links */}
-//           <div className="footer-links flex items-center gap-10 pb-10">
-//             <div className="flex flex-col font-extralight text-black/70 gap-5  md:text-3xl mt-12">
-//               <Link className="">Home</Link>
-//               <Link className="">About</Link>
-//               <Link className="">Services</Link>
-//               <Link className="">Show</Link>
-//             </div>
-//             <div className="flex flex-col font-extralight text-black/70 gap-5 underline md:text-3xl mt-12">
-//               <Link className="">Instagram</Link>
-//               <Link className="">Twitter</Link>
-//               <Link className="">Facebook</Link>
-//               <Link className="">LinkedIn</Link>
-//             </div>
-//           </div>
-
-//           {/* Footer Bottom Text */}
-//           <div className="absolute bottom-0">
-//             <h1 className=" border-t-1 leading-none pt-5 border-black/50 text-black/80 w-full text-[34vw] md:text-[15vw]">
-//               {splitText("Fosnix")} {/* Animate the footer text */}
-//             </h1>
-//           </div>
-//         </div>
-//       </motion.div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
-  const [inView, setInView] = useState(false);
-  const footerRef = useRef(null);
+  // headind and paragraph animation logic
+  const text = "fosnix"; // Heading text
 
-  // Intersection Observer setup
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setInView(true); // Set state to true when the footer comes into view
-        } else {
-          setInView(false); // Set state to false when the footer goes out of view
-        }
+  // Split the text into individual characters
+  const characters = text.split("");
+
+  const paragraph = `We are here to make things<br />happen just trust<br />the process`;
+
+  // Split the paragraph by '<br />' to get individual lines
+  const lines = paragraph.split("<br />");
+
+  // heading and paragraph animation ends
+
+  let ftop = gsap.timeline();
+  useGSAP(() => {
+    ftop.from(".footerp", {
+      y: 140,
+      duration: 1.6,
+      ease: "expo.inOut",
+      delay: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 80%", // When the top of the element reaches 80% of the viewport height
+        end: "top 30%", // When the top of the element reaches 30% of the viewport height
+        scrub: 3, // Smoothly scrubs the animation
+        
       },
-      {
-        threshold: 0.4, // Trigger when 40% of the footer is in view
-      }
-    );
-
-    if (footerRef.current) {
-      observer.observe(footerRef.current); // Observe the footer element
-    }
-
-    // Cleanup the observer on component unmount
-    return () => {
-      if (footerRef.current) {
-        observer.unobserve(footerRef.current);
-      }
-    };
-  }, []);
-
-  // Split text into letters for animation
-  const splitText = (text) => {
-    return text.split("").map((char, index) => (
-      <motion.span
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: inView ? 1 : 0,
-          y: inView ? 0 : 20,
-        }}
-        transition={{
-          delay: index * 0.1, // Stagger the animations
-          duration: 0.5,
-          ease: "easeOut",
-        }}
-      >
-        {char}
-      </motion.span>
-    ));
-  };
+    });
+    ftop.from(".fheading", {
+      y: -120,
+      duration: 1.2,
+      ease: "power4.inOut",
+      stagger: 0.3,
+      delay: 1,
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 80%", // When the top of the element reaches 80% of the viewport height
+        end: "top 30%", // When the top of the element reaches 30% of the viewport height
+        scrub: 3, // Smoothly scrubs the animation
+      },
+    });
+    ftop.from(".menus", {
+      opacity:0,
+      x: 100,
+      
+      duration: 1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 30%", // When the top of the element reaches 80% of the viewport height
+        end: "top 10%", // When the top of the element reaches 30% of the viewport height
+        scrub: 3, // Smoothly scrubs the animation
+      },
+    });
+  });
 
   return (
     <footer
-      ref={footerRef}
-      className="h-[80vh] md:h-[60vh] w-full relative mx-auto"
-      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+      className="footer w-full relative mx-auto"
+      style={{
+        clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
+      }}
     >
-      <motion.div
-        className="fixed bottom-0 w-full h-[80vh] md:h-[60vh] bg-white/90 pt-20"
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: inView ? 1 : 0,
-        }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <div className="container mx-auto px-4 bottom-0">
-          {/* Footer Content with Text Animation */}
-          <div className="footer-text text-black/90 pb-7">
-            <h3 className="text-5xl md:text-7xl">
-              {splitText("Fosnix")} {/* Split and animate each letter */}
-            </h3>
-            <p className="font-extralight md:text-3xl mt-4">
-              {splitText("We Provide Best Services")}{" "}
-              {/* Split and animate each letter */}
-            </p>
-          </div>
-
-          {/* Footer Links */}
-          <div className="footer-links flex items-center gap-10 pb-10">
-            <div className="flex flex-col font-extralight text-black/70 gap-5 md:text-3xl mt-12">
-              <motion.div
-                className="flex flex-col gap-5"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: inView ? 1 : 0,
-                  y: inView ? 0 : 20,
-                }}
-                transition={{
-                  delay: 0.5, // Add a delay to start the link animation after text
-                  duration: 0.6,
-                  ease: "easeOut",
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-white overflow-hidden">
+          <h1 className=" text-4xl md:text-5xl lg:text-6xl">
+            {characters.map((char, index) => (
+              <span
+                key={index}
+                className="inline-block fheading"
+                style={{
+                  animationDelay: `${index * 0.1}s`, // Stagger the animation for each character
                 }}
               >
-                <Link className="">{splitText("Home", 0)}</Link>
-                <Link className="">{splitText("About", 0.3)}</Link>
-                <Link className="">{splitText("Services", 0.6)}</Link>
-                <Link className="">{splitText("Show", 0.9)}</Link>
-              </motion.div>
-            </div>
-
-            <div className="flex flex-col font-extralight text-black/70 gap-5 underline md:text-3xl mt-12">
-              <motion.div
-                className="flex flex-col gap-5"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: inView ? 1 : 0,
-                  y: inView ? 0 : 20,
-                }}
-                transition={{
-                  delay: 0.5, // Add a delay to start the link animation after text
-                  duration: 0.6,
-                  ease: "easeOut",
-                }}
+                {char}
+              </span>
+            ))}
+          </h1>
+          <div className="overflow-hidden">
+            {lines.map((line, lineIndex) => (
+              <p
+                className="footerp text-3xl md:text-[5vw] lg:text-5xl capitalize text-purple-400"
+                key={lineIndex}
               >
-                <Link className="">{splitText("Instagram", 1.2)}</Link>
-                <Link className="">{splitText("Twitter", 1.5)}</Link>
-                <Link className="">{splitText("Facebook", 1.8)}</Link>
-                <Link className="">{splitText("LinkedIn", 2.1)}</Link>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Footer Bottom Text */}
-          <div className="absolute bottom-0">
-            <h1 className=" border-t-1 leading-none pt-5 border-black/50 text-black/80 w-full text-[34vw] md:text-[15vw]">
-              {splitText("Fosnix")} {/* Animate the footer text */}
-            </h1>
+                {line}
+              </p>
+            ))}
           </div>
         </div>
-      </motion.div>
+        <div className="flex flex-col lg:flex-row justify-between gap-10 md:gap-20 mt-8 overflow-hidden">
+          <div className="menus border-t-1 border-gray-400 w-full lg:w-1/2">
+            <div className=" text-white/80 flex flex-col gap-3 mt-5 md:text-[3.5vw] lg:text-xl lg:gap-8">
+              <Link className="">Home</Link>
+              <Link className="">About</Link>
+              <Link className="">Services</Link>
+              <Link className="">Work</Link>
+            </div>
+          </div>
+          <div className="menus border-t-1 border-gray-400 w-full lg:w-1/2">
+            <div className=" text-white/80 flex flex-col gap-3 underline mt-5 md:text-[3.5vw] lg:text-xl lg:gap-8">
+              <Link className="">LinkedIn</Link>
+              <Link className="">Instagram</Link>
+              <Link className="">X</Link>
+              <Link className="">Facebook</Link>
+            </div>
+          </div>
+        </div>
+        <div className="">
+          <div className="flex justify-center gap-10 text-white uppercase text-xs mt-6 md:mt-8 border-t-1 border-gray-400 md:text-md md:py-5">
+            <h3 className="mt-3 md:mt-0">Terms & Conditions</h3>
+            <h3 className="mt-3 md:mt-0">Privacy Policy</h3>
+          </div>
+          <div className="text-white flex justify-center pt-2 text-xs md:text-md">
+            @2025 Rightdata All Rights Reserved
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

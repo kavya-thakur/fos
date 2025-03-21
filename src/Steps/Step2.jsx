@@ -25,13 +25,13 @@ const Step2 = () => {
       <div className="container mx-auto px-4 pt-20 md:pt-0 mt-14  ">
         <div className="text-white capitalize flex flex-col md:flex-row md:gap-[20vw] overflow-hidden md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 ">
           <div className="text-black capitalize">
-            <h1 className="text-6xl md:text-[7.9vw] tracking-tighter font-light text-black font-['Aboreto']">
+            <h1 className="text-6xl md:text-[7.9vw] tracking-tighter font-light text-black ">
               Step Two{" "}
             </h1>
             <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl  tracking-tight mt-5 mb-10 pb-4">
               Dedicated Support
             </h2>
-            <p className="font-['Aboreto'] text-white/60 text-lg lg:text-[1.6vw] md:w-[70%]">
+            <p className=" text-white/60 text-lg lg:text-[1.6vw] md:w-[70%]">
               You will be assigned a dedicated point of contact to discuss the
               details of your project, ensuring all aspects and requirements are
               fully understood and addressed.

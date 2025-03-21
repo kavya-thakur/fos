@@ -128,11 +128,11 @@ const Testimonials = () => {
             Testimonials
           </div>
         </div>
-        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight text-white/90 capitalize font-['Aboreto'] my-5">
+        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight  bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text capitalize my-5">
           What our  users say
         </h2>
         <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
-          <p className="text-center text-md mt-3 mb-3">
+          <p className="text-center text-white/70 text-md mt-3 mb-3 font-extralight">
             from intuitive design to powerful features, our web has become an
             essential platform for users around the world
           </p>

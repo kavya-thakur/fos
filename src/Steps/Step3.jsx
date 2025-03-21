@@ -11,7 +11,7 @@ const Step3 = () => {
     },
   };
   return (
-    <motion.section className="sticky top-0 bg-[#1A3636] overflow-hidden h-screen md:max-h-[1300px] w-full rounded-t-2xl overflow-hidden">
+    <motion.section className="sticky top-0 bg-[#1A3636] overflow-hidden h-screen md:max-h-[1300px] w-full rounded-t-2xl ">
       {/* spape animation  */}
       <div className="absolute flex justify-center items-center w-[56vw] h-[56vw] top-[59%] right-0 md:top-[29%] lg:top-[35%]">
         {/* Jelly Shape 1 */}
@@ -23,13 +23,13 @@ const Step3 = () => {
       <div className="container mx-auto px-4 pt-5 md:pt-0 mt-14  ">
         <div className="text-white capitalize flex flex-col md:flex-row md:gap-[20vw] md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
           <div>
-            <h1 className="text-5xl md:text-[7vw] tracking-tighter font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text font-['Aboreto']">
+            <h1 className="text-5xl md:text-[7vw] tracking-tighter font-light bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text ">
               Step three{" "}
             </h1>
             <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl tracking-tight mt-5 mb-10 pb-4 md:text-6xl">
               Developer Assignment
             </h2>
-            <p className=" font-['Aboreto'] bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg md:text-[1.7vw] md:w-[70%]">
+            <p className="  bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text text-lg md:text-[1.7vw] md:w-[70%]">
               A qualified developer will be assigned to your project to begin
               work on it based on the agreed-upon terms.
             </p>
