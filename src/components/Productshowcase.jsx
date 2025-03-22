@@ -101,7 +101,7 @@ const Productshowcase = () => {
       duration: 1,
       ease: "power2.out",
       stagger: 0.3, // Stagger for natural flow
-      delay:0.4
+      delay:0.2
     });
   }, { scope: containerRef });
 

@@ -134,7 +134,7 @@ const Step4 = () => {
           <div>
             <div className="head4">
               <h1 className="text-6xl md:text-[7.9vw] tracking-tighter font-light text-black overflow-hidden">
-                {"Step-Three".split("").map((char, index) => (
+                {"Step-Four".split("").map((char, index) => (
                   <span
                     key={index}
                     className="inline-block step4h bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text"
