@@ -7,19 +7,21 @@ import About from "./components/About";
 import LoginPage from "./components/LoginPage";
 
 import Home from "./components/Home";
+import LocomotiveScrollProvider from "./utils/locomotive";
 
 const App = () => {
-
   return (
     <div className="">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/description" element={<Description />} />
-        <Route path="/submitted" element={<Submit />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
+      <LocomotiveScrollProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/description" element={<Description />} />
+          <Route path="/submitted" element={<Submit />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </LocomotiveScrollProvider>
 
       {/* <Description /> */}
     </div>

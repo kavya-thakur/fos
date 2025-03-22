@@ -1,6 +1,11 @@
 import React from "react";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import complete from "../assets/complete.json";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const Step4 = () => {
   const defaultOptions = {
     loop: true,
@@ -10,6 +15,30 @@ const Step4 = () => {
       preserveAspectRatio: "xMidYMid slice", // Aspect ratio settings
     },
   };
+  useGSAP(() => {
+    let step4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".head4",
+        start: "top 80%",
+        end: "top 30%",
+        scrub: 2, // Slower scrub for smoother animation
+      },
+    });
+    step4
+      .from(".step4h", {
+        y: -100,
+        opacity: 0,
+        duration: 1.3, // Increased time to feel smoother
+        ease: "power1.inOut",
+        stagger: 0.2,
+      })
+      .from(".step4subheading", {
+        y: 100,
+        opacity: 0,
+        duration: 1.3, // Increased time to feel smoother
+        ease: "power1.inOut",
+      });
+  });
   return (
     <section className="sticky top-0 bg-[#750E21]  h-screen w-full md:max-h-[1300px] rounded-t-4xl overflow-hidden">
       {/* shapes animation start  */}
@@ -23,20 +52,31 @@ const Step4 = () => {
       <div className="container mx-auto px-4  ">
         <div className=" text-white capitalize pt-20  flex flex-col md:flex-row md:gap-[20vw] md:absolute md:top-1/2  md:left-1/2 md:-translate-x-1/2  md:-translate-y-1/2 ">
           <div className="">
-            <h1 className="text-5xl md:text-[6.9vw] tracking-tight font-light bg-gradient-to-r from-neutral-300 to-stone-400  text-transparent bg-clip-text ">
-            final step{" "}
-            </h1>
-            <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800  text-transparent bg-clip-text  text-6xl tracking-tight mt-5 mb-10 pb-4 ">
-              Project Completion
-            </h2>
+            <div className="head4">
+              <h1 className="text-6xl md:text-[7.9vw] tracking-tighter font-light text-black overflow-hidden">
+                {"Step-Three".split("").map((char, index) => (
+                  <span
+                    key={index}
+                    className="inline-block step4h bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text "
+                  >
+                    {char}
+                  </span>
+                ))}
+              </h1>
+            </div>
+            <div className="step4subheading overflow-hidden mt-5 mb-10 ">
+              <h2 className="bg-gradient-to-r from-violet-200 to-fuchsia-800 text-transparent bg-clip-text text-6xl  tracking-tight">
+                Project Completion
+              </h2>
+            </div>
             <p className="  bg-gradient-to-r from-neutral-300 to-stone-400  text-transparent bg-clip-text text-lg md:text-[1.8vw] md:w-[70%]">
               The assigned developer will complete your project and notify you
               once the work is done, ready for delivery.
             </p>
           </div>
-          <div className="lg:h-[36vw] lg:w-[46vw] md:w-[30vw]">
+          {/* <div className="lg:h-[36vw] lg:w-[46vw] md:w-[30vw]">
             <Lottie options={defaultOptions} />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

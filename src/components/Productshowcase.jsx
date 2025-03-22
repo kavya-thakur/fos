@@ -1,29 +1,69 @@
-import React from "react";
+import React, { useRef } from "react";
 import productimage from "../assets/product-image.png";
 import { GridBackgroundDemo } from "./Background";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Productshowcase = () => {
+  const containerRef = useRef(null);
+  useGSAP(
+    () => {
+      let phead = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".product",
+          start: "top 90%",
+          end: "top 40%",
+          scrub: 2, // Reduced scrub for better smoothness
+        },
+      });
+
+      phead
+        .from(".producth", {
+          y: 90,
+          duration: 1,
+          ease: "power1.inout",
+        })
+        .from(".ppara", {
+          y: 100,
+          duration: 1,
+          ease: "power1.inout",
+        });
+    },
+    { scope: containerRef }
+  );
   return (
     <>
       {" "}
-      <section className="relative  bg-black py-24 lg:pt-[35vw]">
+      <section
+        ref={containerRef}
+        className="relative  bg-black py-24 lg:pt-[35vw]"
+      >
         <GridBackgroundDemo />
-        <div className="z-10  inset-0 flex items-center justify-center flex-col absolute container mx-auto px-4 gap-4 md:gap-10">
+        <div className=" z-10  inset-0 flex items-center justify-center flex-col absolute container mx-auto px-4 gap-4 md:gap-10 overflow-hidden">
           <div className="flex justify-center mb-4">
             <div className="text-white/90 inline-flex border border-[#FFFF]/30 px-3 py-1 rounded-lg tracking-tight ">
               Boost your productivity
             </div>
           </div>
-          <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tighter text-white/70 capitalize ">
-            A more effective way to <span className="text-purple-500">track</span> progress
-          </h2>
-          <p className=" text-center text-md mt-3 mb-3 text-white/80 md:text-lg font-extralight">
-            Effortlessly turn your ideas into a fully functional, responsive, <br />
-            Saas website in just minutes with beautiful design.
-          </p>
+          <div className="product overflow-hidden">
+            <h2 className="producth text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tighter text-white/70 capitalize leading-none will-change-transform">
+              A more effective way
+              <br />
+              <span className="text-purple-500">track</span> progress
+            </h2>
+          </div>
+          <div className="overflow-hidden">
+            <p className="ppara text-center text-xs text-white/80 md:text-lg font-extralight">
+              Effortlessly turn your ideas into a fully functional, responsive,
+              <br />
+              Saas website in minutes with beautiful design.
+            </p>
+          </div>
           <img
             src={productimage}
-            className="lg:w-[85%] lg:mx-auto"
+            className="img lg:w-[85%] lg:mx-auto"
             alt="Product"
           />
         </div>

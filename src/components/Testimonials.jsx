@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import avatar1 from "../assets/avatar-1.png";
 import avatar2 from "../assets/avatar-2.png";
 import avatar3 from "../assets/avatar-3.png";
@@ -10,6 +10,11 @@ import avatar8 from "../assets/avatar-8.png";
 import avatar9 from "../assets/avatar-9.png";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const Testimonials = () => {
   const testimonials = [
     {
@@ -118,10 +123,25 @@ const Testimonials = () => {
     </div>
   );
 
+  // animation for the this section
+  const testimonialref = useRef(null); // Scoped reference for animation
+
+  // useGSAP(
+  //   () => {
+  //     let testimonial = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: testimonialref.current,
+  //         start: "top 80%",
+  //         end: "top 30%",
+  //         scrub: 4, // Slower scrub for smoother animation
+  //         // markers: true,
+  //       },
+  //     });
+  //   },
+  //   { scope: testimonialref }
+  // );
   return (
-    <section 
-    
-    className="bg-black text-white py-20">
+    <section ref={testimonialref} className="bg-black text-white py-20">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mt-10 mb-4">
           <div className=" text-sm inline-flex border border-white/70 px-3 py-1 rounded-lg tracking-tight ">
@@ -129,7 +149,7 @@ const Testimonials = () => {
           </div>
         </div>
         <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tight  bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text capitalize my-5">
-          What our  users say
+          What our users say
         </h2>
         <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
           <p className="text-center text-white/70 text-md mt-3 mb-3 font-extralight">
