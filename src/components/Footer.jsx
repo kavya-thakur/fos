@@ -1,5 +1,4 @@
 
-
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
@@ -13,41 +12,55 @@ const Footer = () => {
 
   useGSAP(
     () => {
-      let ftop = gsap.timeline({
+      if (!footerRef.current) return; // Prevent errors
+
+      const footerPs = footerRef.current.querySelectorAll(".footerp");
+      const headings = footerRef.current.querySelectorAll(".fheading");
+      const menus = footerRef.current.querySelectorAll(".menus");
+
+      gsap.from(footerPs, {
+        y: 60,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        stagger: 0.3,
         scrollTrigger: {
           trigger: footerRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: 4, // Slower scrub for smoother animation
+          start: "top 85%",
+          end: "top 40%",
+          scrub: 1.5,
         },
       });
 
-      ftop
-        .from(".footerp", {
-          y: 100,
-          opacity: 0,
-          duration: 2, // Slower reveal
-          ease: "expo.inOut",
-          stagger: 0.4, // Delays each line for better flow
-        })
-        .from(
-          ".fheading",
-          {
-            y: -100,
-            rotate: -30,
-            opacity: 0,
-            duration: 1.3, // Increased time to feel smoother
-            ease: "power1.inOut",
-            stagger: 0.25,
-          },
-          "-=1"
-        )
-        .from(".menus", {
-          opacity: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        });
-      ("-=2");
+      gsap.from(headings, {
+        y: -50,
+        rotate: -10,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top 85%",
+          end: "top 40%",
+          scrub: 1.5,
+        },
+      });
+
+      gsap.from(menus, {
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top 85%",
+          end: "top 40%",
+          scrub: 1.5,
+        },
+      });
+
+      ScrollTrigger.refresh(); // Ensure animations work properly on load
     },
     { scope: footerRef }
   );
