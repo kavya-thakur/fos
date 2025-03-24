@@ -76,7 +76,7 @@ const Home = () => {
   return (
     <>
       <section>
-        <div className="min-h-screen w-full relative overflow-hidden">
+        <div className="min-h-screen  relative overflow-hidden">
           <GridBackgroundDemo />
           <div className="absolute bg-purple-600 w-[90vw] h-[120vw] md:max-w-[56vw] md:h-[56vw] -right-5 md:right-40 blur-[10px] md:blur-[30px] md:rounded-t-[50%] rounded-t-[600%] top-120 md:top-180 2xl:top-[36vw] 2xl:right-110">
             {/* Jelly Shape 1 */}
@@ -87,14 +87,14 @@ const Home = () => {
           <div className="container absolute z-10  inset-0 mx-auto px-4 ">
             <div className="pt-[40vw] md:pt-[40vw] lg:pt-[10vw] 2xl:max-pt-[40vw]">
               <div className="lg:max-w-[80%] md:max-w-[70%] flex justify-center items-center mx-auto">
-                <h1 className="bg-gradient-to-br from-slate-50 to-zinc-400 bg-clip-text text-transparent font-semibold text-[11vw] md:text-[6.5vw] text-center tracking-tight leading-none ">
+                <h1 className="bg-gradient-to-br from-slate-50 to-zinc-400 bg-clip-text text-transparent font-extrabold text-[11vw] md:text-[6.5vw] text-center tracking-tight leading-none ">
                   One <span className="text-purple-500">search</span> bar for your projects
                 </h1>
               </div>
 
               <div className="flex justify-center items-center gap-2 md:gap-4 mt-[10vw] md:mt-[3vw]">
                 {/* Static "We offer" text */}
-                <h1 className="text-3xl md:text-5xl 2xl:text-[3.4vw] font-semibold text-white/70 tracking-tighter ">
+                <h1 className="text-3xl md:text-5xl 2xl:text-[3.4vw] font-extrabold text-white/70 tracking-tighter ">
                   We offer
                 </h1>
 

@@ -71,7 +71,7 @@ const Footer = () => {
         <div className="text-white overflow-hidden">
           <h1 className="text-4xl md:text-5xl lg:text-6xl">
             {"fosnix".split("").map((char, index) => (
-              <span key={index} className="inline-block fheading">
+              <span key={index} className="inline-block fheading font-extrabold">
                 {char}
               </span>
             ))}

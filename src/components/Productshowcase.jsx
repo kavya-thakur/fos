@@ -106,27 +106,27 @@ const Productshowcase = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative bg-black py-24 lg:pt-[35vw]">
+    <section ref={containerRef} className="relative bg-black pt-24 lg:pt-[35vw]">
       <GridBackgroundDemo />
       <div className="z-10 inset-0 flex items-center justify-center flex-col absolute container mx-auto px-4 gap-4 md:gap-10 overflow-hidden">
         
         {/* Highlight Badge */}
         <div className="flex justify-center mb-4">
-          <div className="animate-item text-white/90 inline-flex border border-white/30 px-3 py-1 rounded-lg tracking-tight">
+          <div className="animate-item text-white/80 inline-flex border border-white/30 px-3 py-1 rounded-lg tracking-tight">
             Boost your productivity
           </div>
         </div>
 
         {/* Heading */}
-        <div className="animate-item text-center font-bold text-3xl md:text-4xl lg:text-7xl tracking-tighter text-white/70 capitalize leading-none">
+        <div className="animate-item text-center font-extrabold text-4xl md:text-4xl lg:text-7xl tracking-tighter text-white/70 capitalize leading-none">
           A more effective way <br />
           <span className="text-purple-500">track</span> progress
         </div>
 
         {/* Paragraph */}
-        <p className="animate-item text-center text-xs text-white/80 md:text-lg font-extralight">
+        <p className="animate-item text-center text-sm text-white/80 md:text-lg ">
           Effortlessly turn your ideas into a fully functional, responsive,
-          <br />
+          
           SaaS website in minutes with beautiful design.
         </p>
 
