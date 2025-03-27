@@ -48,7 +48,7 @@ const Services = () => {
           opacity: 1,
           y: 0,
           duration: 1,
-          delay: index * 0.3,
+          delay: index * 0.2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
@@ -108,34 +108,33 @@ const Services = () => {
         </div>
         <DotBackground>
           <div className="container mx-auto px-4">
-            <div className="mt-20 flex flex-col gap-20 max-w-7xl mx-auto">
+            <div className="mt-20 flex flex-col gap-20 md:gap-45 max-w-7xl mx-auto">
               {services.map(({ img, title, description, points }, index) => (
                 <div
                   key={index}
                   ref={(el) => (serviceRefs.current[index] = el)}
                   className={`text-white flex flex-col md:flex-row ${
                     index % 2 !== 0 ? "md:flex-row-reverse md:text-end" : ""
-                  } md:justify-center md:items-center gap-10 lg:gap-[5rem] lg:px-20`}
+                  } md:justify-center  gap-10 lg:gap-[5rem] lg:px-20`}
                 >
-                  <div className="md:w-1/2">
-                    <h1 className="text-start text-3xl lg:text-4xl leading-none tracking-tighter font-semibold bg-gradient-to-br from-white to-[#678dc6] bg-clip-text text-transparent md:w-[90%]">
+                  <div className="md:w-1/2 lg:w-[35vw] lg:h-[40vh]">
+                    <h1 className="text-start text-3xl lg:text-[2.5rem] leading-none tracking-tighter font-semibold bg-gradient-to-br from-white to-[#678dc6] bg-clip-text text-transparent md:w-[90%]">
                       {title}
                     </h1>
-                    <p className="text-start text-neutral-400 md:w-[90%] my-5 text-md lg:text-lg">
+                    <p className="text-start text-neutral-400 md:w-[90%] my-5 text-md lg:text-[1.2rem]">
                       {description}
                     </p>
-                    <ol className="flex flex-col gap-4 font-light text-start">
+                    <ol className="flex flex-col gap-4 font-light text-start lg:text-[1.2rem]">
                       {points.map((point, i) => (
                         <li key={i}>• {point}</li>
                       ))}
                     </ol>
                   </div>
-                  <div className="rounded-2xl overflow-hidden">
+                  <div className="rounded-2xl overflow-hidden ">
                     <img
-                      className="md:w-[30vw] md:h-[50vh] overflow-hidden"
+                      className="md:w-[25vw] md:h-[50vh] lg:h-[40vh] overflow-hidden bg-cover"
                       src={img}
                       alt={title}
-                      loading="lazy"
                     />
                   </div>
                 </div>
