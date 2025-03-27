@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import avatar1 from "../assets/avatar-1.png";
 import avatar2 from "../assets/avatar-2.png";
 import avatar3 from "../assets/avatar-3.png";
@@ -8,10 +8,7 @@ import avatar6 from "../assets/avatar-6.png";
 import avatar7 from "../assets/avatar-7.png";
 import avatar8 from "../assets/avatar-8.png";
 import avatar9 from "../assets/avatar-9.png";
-import { twMerge } from "tailwind-merge";
-import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +21,7 @@ const Testimonials = () => {
       username: "@jamietechguru00",
     },
     {
-      text: "Our team's productivity has skyrocketed since we started using this tool. ",
+      text: "Our team's productivity has skyrocketed since we started using this tool.",
       imageSrc: avatar2,
       name: "Josh Smith",
       username: "@jjsmith",
@@ -42,7 +39,7 @@ const Testimonials = () => {
       username: "@caseyj",
     },
     {
-      text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
+      text: "Planning and executing events has never been easier.",
       imageSrc: avatar5,
       name: "Taylor Kim",
       username: "@taylorkimm",
@@ -54,13 +51,13 @@ const Testimonials = () => {
       username: "@rileysmith1",
     },
     {
-      text: "Adopting this app for our team has streamlined our project management and improved communication across the board.",
+      text: "Adopting this app for our team has streamlined our project management.",
       imageSrc: avatar7,
       name: "Jordan Patels",
       username: "@jpatelsdesign",
     },
     {
-      text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
+      text: "With this app, we can easily assign tasks, track progress, and manage documents.",
       imageSrc: avatar8,
       name: "Sam Dawson",
       username: "@dawsontechtips",
@@ -73,98 +70,74 @@ const Testimonials = () => {
     },
   ];
 
-  const firstCol = testimonials.slice(0, 3);
-  const secCol = testimonials.slice(3, 6);
-  const thirdCol = testimonials.slice(6, 9);
+  const testimonialRef = useRef(null);
+  const scrollRefs = useRef([]);
 
-  const TestimonialCol = ({ className, testimonials, duration }) => (
-    <div className={("", className)}>
-      <motion.div
-        // animate={{
-        //   translateY: "-50%",
-        // }} 
-        // transition={{
-        //   repeat: Infinity,
-        //   duration: duration || 10,
-        //   ease: "linear",
-        //   repeatType: "loop",
-        // }}
-        className={twMerge("flex flex-col gap-6 ")}
-      >
-        {[...new Array(2)].fill(0).map((_, index) => (
-          <React.Fragment key={index}>
-            {testimonials.map(({ text, imageSrc, name, username, i }) => (
-              <div
-                key={name}
-                className="p-10 border border-white/20 shadow-2xl rounded-3xl  max-w-sm w-full"
-              >
-                <div>{text}</div>
-                <div className="flex items-center gap-2 mt-5">
-                  <img
-                    src={imageSrc}
-                    width={40}
-                    height={40}
-                    alt={name}
-                    className="h-10 w-10 rounded-full"
-                  />
+  useEffect(() => {
+    const durations = [8, 10, 12];
+    scrollRefs.current.forEach((el, index) => {
+      gsap.to(el, {
+        y: "-100%",
+        duration: durations[index],
+        ease: "linear",
+        repeat: -1,
+      });
+    });
+  }, []);
 
-                  <div className="flex flex-col">
-                    <div className="font-bold tracking-tight leading-5">
-                      {name}
-                    </div>
-                    <div className="tracking-tight leading-5">{username}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </React.Fragment>
-        ))}
-      </motion.div>
-    </div>
-  );
-
-  // animation for the this section
-  const testimonialref = useRef(null); // Scoped reference for animation
-
-  // useGSAP(
-  //   () => {
-  //     let testimonial = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: testimonialref.current,
-  //         start: "top 80%",
-  //         end: "top 30%",
-  //         scrub: 4, // Slower scrub for smoother animation
-  //         // markers: true,
-  //       },
-  //     });
-  //   },
-  //   { scope: testimonialref }
-  // );
   return (
-    <section ref={testimonialref} className="bg-black text-white py-20">
+    <section ref={testimonialRef} className="bg-black text-white py-20">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mt-10 mb-4">
-          <div className=" text-sm inline-flex border border-white/70 px-3 py-1 rounded-lg tracking-tight ">
+          <div className="text-sm inline-flex border border-white/70 px-3 py-1 rounded-lg tracking-tight">
             Testimonials
           </div>
         </div>
-        <h2 className="text-center font-extrabold text-4xl md:text-4xl lg:text-7xl tracking-tight  bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text capitalize my-5">
+        <h2 className="text-center font-extrabold text-4xl md:text-4xl lg:text-7xl tracking-tight bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text capitalize my-5">
           What our users say
         </h2>
-        <div className="lg:flex lg:justify-center lg:w-[37%] mx-auto mt-2">
-          <p className="text-center text-neutral-500 text-md mt-3 mb-3 ">
-            from intuitive design to powerful features, our web has become an
-            essential platform for users around the world
-          </p>
-        </div>
-        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[768px] overflow-hidden">
-          <TestimonialCol testimonials={firstCol} className="" duration={15} />
-          <TestimonialCol testimonials={secCol} className={`hidden md:block`} />
-          <TestimonialCol
-            duration={20}
-            testimonials={thirdCol}
-            className={"hidden lg:block"}
-          />
+        <p className="text-center text-neutral-500 text-md mt-3 mb-3 lg:w-[37%] mx-auto">
+          From intuitive design to powerful features, our web has become an
+          essential platform for users around the world.
+        </p>
+        <div className="flex justify-center gap-6 overflow-hidden max-h-[768px] md:max-h-[512px] lg:max-h-[900px] [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+          {[...Array(3)].map((_, index) => (
+            <div
+              key={index}
+              ref={(el) => (scrollRefs.current[index] = el)}
+              className={`flex flex-col gap-6 ${
+                index === 1 ? "hidden md:flex" : ""
+              } ${index === 2 ? "hidden lg:flex" : ""}`}
+            >
+              {[...testimonials, ...testimonials].map(
+                ({ text, imageSrc, name, username }, i) => (
+                  <div
+                    key={`${name}-${i}`}
+                    className="p-10 border border-white/20 shadow-2xl rounded-3xl max-w-sm w-full"
+                  >
+                    <div>{text}</div>
+                    <div className="flex items-center gap-2 mt-5">
+                      <img
+                        src={imageSrc}
+                        width={40}
+                        height={40}
+                        alt={name}
+                        className="h-10 w-10 rounded-full"
+                      />
+                      <div className="flex flex-col">
+                        <div className="font-bold tracking-tight leading-5">
+                          {name}
+                        </div>
+                        <div className="tracking-tight leading-5">
+                          {username}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

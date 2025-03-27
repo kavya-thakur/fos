@@ -76,19 +76,14 @@ const Home = () => {
   return (
     <>
       <section>
-        <div className="min-h-screen  relative overflow-hidden">
+        <div className="relative overflow-hidden">
           <GridBackgroundDemo />
-          <div className="absolute bg-purple-600 w-[90vw] h-[120vw] md:max-w-[56vw] md:h-[56vw] -right-5 md:right-40 blur-[10px] md:blur-[30px] md:rounded-t-[50%] rounded-t-[600%] top-120 md:top-180 2xl:top-[36vw] 2xl:right-110">
-            {/* Jelly Shape 1 */}
-            <div className="jelly-shape jelly-shape-1 h-64 w-64 absolute bg-[#9b4dff] rounded-full blur-[20px] lg:h-[40vw] lg:w-[40vw]"></div>
-            {/* Jelly Shape 2 */}
-            <div className="jelly-shape jelly-shape-2 h-64 w-64 absolute bg-[#6a1b9a] rounded-full blur-[20px] lg:h-[40vw] lg:w-[40vw]"></div>
-          </div>
+        
           <div className="container absolute z-10  inset-0 mx-auto px-4 ">
             <div className="pt-[40vw] md:pt-[40vw] lg:pt-[10vw] 2xl:max-pt-[40vw]">
               <div className="lg:max-w-[80%] md:max-w-[70%] flex justify-center items-center mx-auto">
                 <h1 className="bg-gradient-to-br from-slate-50 to-zinc-400 bg-clip-text text-transparent font-extrabold text-[11vw] md:text-[6.5vw] text-center tracking-tight leading-none ">
-                  One <span className="text-purple-500">search</span> bar for your projects
+                  One <span className="bg-[linear-gradient(316deg,#3e187a_0%,#994ecc_74%)] text-transparent bg-clip-text">search</span> bar for your projects
                 </h1>
               </div>
 
@@ -114,9 +109,7 @@ const Home = () => {
               {/* end  */}
               <div
                 onClick={handleDivClick} // Handle the click event
-                className={`relative mt-[10vw] md:mt-[3vw] md:w-1/2 flex justify-center items-center mx-auto bg-black border border-white/20 text-white rounded-full 2xl:px-[2vw] 2xl:py-[0.5vw] transition-all duration-300 ${
-                  isClicked ? "scale-120" : "scale-100"
-                }`}
+                className={`relative mt-[10vw] md:mt-[3vw] md:w-1/2 flex justify-center items-center mx-auto bg-black border border-white/20 text-white rounded-full 2xl:px-[2vw] 2xl:py-[0.5vw] transition-all duration-300 `}
               >
                 <motion.input
                   type="text"
@@ -134,6 +127,9 @@ const Home = () => {
           </div>
           {/* gradient shape */}
         </div>
+
+        {/* login page  */}
+        
       </section>
       <Stepwrapper />
       <Productshowcase />

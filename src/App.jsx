@@ -8,6 +8,7 @@ import LoginPage from "./components/LoginPage";
 
 import Home from "./components/Home";
 import LocomotiveScrollProvider from "./utils/locomotive";
+import Services from "./components/Services";
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+
           <Route path="/description" element={<Description />} />
           <Route path="/submitted" element={<Submit />} />
           <Route path="/about" element={<About />} />

@@ -76,40 +76,17 @@
 import React, { useRef } from "react";
 import productimage from "../assets/product-image.png";
 import { GridBackgroundDemo } from "./Background";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Productshowcase = () => {
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 85%", // Trigger earlier for a smoother feel
-        end: "top 40%",
-        toggleActions: "play none none none", // Plays only once
-      },
-    });
-
-    tl.from(containerRef.current.querySelectorAll(".animate-item"), {
-      y: 80,
-      autoAlpha: 0, // Combines opacity and visibility for better performance
-      duration: 1,
-      ease: "power2.out",
-      stagger: 0.3, // Stagger for natural flow
-      delay:0.2
-    });
-  }, { scope: containerRef });
-
   return (
-    <section ref={containerRef} className="relative bg-black pt-24 lg:pt-[35vw]">
+    <section
+      ref={containerRef}
+      className="relative bg-black pt-24 lg:pt-[35vw]"
+    >
       <GridBackgroundDemo />
       <div className="z-10 inset-0 flex items-center justify-center flex-col absolute container mx-auto px-4 gap-4 md:gap-10 overflow-hidden">
-        
         {/* Highlight Badge */}
         <div className="flex justify-center mb-4">
           <div className="animate-item text-white/80 inline-flex border border-white/30 px-3 py-1 rounded-lg tracking-tight">
@@ -125,9 +102,8 @@ const Productshowcase = () => {
 
         {/* Paragraph */}
         <p className="animate-item text-center text-sm text-white/80 md:text-lg ">
-          Effortlessly turn your ideas into a fully functional, responsive,
-          
-          SaaS website in minutes with beautiful design.
+          Effortlessly turn your ideas into a fully functional, responsive, SaaS
+          website in minutes with beautiful design.
         </p>
 
         {/* Image */}
