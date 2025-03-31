@@ -124,7 +124,7 @@ const Services = () => {
                     <p className="text-start text-neutral-400 md:w-[90%] my-5 text-md lg:text-[1.2rem]">
                       {description}
                     </p>
-                    <ol className="flex flex-col gap-4 font-light text-start lg:text-[1.2rem]">
+                    <ol className="flex flex-col gap-4 font-light text-start lg:text-lg">
                       {points.map((point, i) => (
                         <li key={i}>• {point}</li>
                       ))}

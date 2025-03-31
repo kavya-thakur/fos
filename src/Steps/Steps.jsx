@@ -3,6 +3,7 @@ import firstvid from "../assets/firststep.mp4";
 import secvid from "../assets/secoundstep.mp4";
 import threevid from "../assets/threestep.mp4";
 import fourvid from "../assets/complete.mp4";
+import { FaArrowRight } from "react-icons/fa";
 
 const Steps = () => {
   const backgrounds = [
@@ -10,31 +11,52 @@ const Steps = () => {
     "bg-[#522258]", // Step 2
     "bg-[#1A3636]", // Step 3
     "bg-[#750E21]", // Step 4
+    "bg-[#48A6A7]",
   ];
 
   const [data, setdata] = useState([
     {
-      step: "step one",
       heading: "Create and submit project",
-      para: "Click on the 'Create Project' button, fill out the necessary details of your project, and submit the form for review.",
+      points: [
+        "➕ Click 'Create Ticket' and fill in the details (Issue Type, Description, Costing Plan).",
+        "🖋 Submit the form to receive a unique Ticket ID.",
+        "🖋 An email confirmation will be sent with tracking details.",
+      ],
       vid: firstvid,
     },
     {
-      step: "step two",
       heading: "Dedicated Support",
-      para: "You will be assigned a dedicated point of contact to discuss the details of your project, ensuring all aspects and requirements are fully understood and addressed.",
+      points: [
+        "A Helping Buddy will be assigned to assist you.",
+        "They’ll guide you, answer your questions, and provide an estimated resolution time.",
+      ],
       vid: secvid,
     },
     {
-      step: "step three",
       heading: "Developer Assignment",
-      para: "A qualified developer will be assigned to your project to begin work on it based on the agreed-upon terms",
+      points: [
+        "Based on your support plan, a skilled developer or support engineer will be assigned.",
+        "Work will begin based on your requirements and urgency.",
+        "Track real-time progress on your ticket.",
+      ],
       vid: threevid,
     },
     {
-      step: "step four",
-      heading: "Project Completion",
-      para: "The assigned developer will complete your project and notify you once the work is done, ready for delivery.",
+      heading: "Track Your Ticket Progress",
+      points: [
+        "Enter your Ticket ID on our website to check status updates.",
+        "Monitor your request as it moves from Pending → Assigned → In Progress → Resolved.",
+        "Receive email notifications on every update.",
+      ],
+      vid: fourvid,
+    },
+    {
+      heading: "Resolution & Feedback",
+      points: [
+        "Get notified once your issue is resolved.",
+        "Review and confirm the solution works for you.",
+        "Share your feedback to help us improve our service.",
+      ],
       vid: fourvid,
     },
   ]);
@@ -53,18 +75,23 @@ const Steps = () => {
           {data.map((step, i) => (
             <div
               key={i}
-              className={`sticky top-30 md:top-30 px-5 flex flex-col md:flex-row md:items-center md:justify-between py-8 h-72 md:w-[80%] md:h-[40rem] lg:h-[45rem] rounded-2xl mx-auto ${backgrounds[i]}`}
+              className={`sticky top-30 md:top-30 px-5 flex flex-col md:flex-row md:items-center md:justify-between py-8 h-72 md:w-[80%] md:h-[40rem] md:gap-[4vw] lg:h-[45rem] rounded-2xl mx-auto ${backgrounds[i]}`}
             >
-              <div className="flex flex-col gap-2">
-                <h1 className="text-[#E3DAC9] text-3xl capitalize font-semibold mb-5 lg:text-7xl">
-                  {step.step}
-                </h1>
-                <h2 className="font-semibold text-xl mb-2 lg:text-5xl">
+              <div className="flex flex-col gap-2 justify-start">
+                <h2 className="font-semibold text-xl lg:text-5xl mb-5">
                   {step.heading}
                 </h2>
-                <p className="text-white/70 md:text-md md:mt-5 lg:text-xl w-[80%]">
-                  {step.para}
-                </p>
+                <ol className="flex flex-col gap-4 font-light text-start lg:text-lg">
+                  {step.points.map((point, i) => (
+                    <li key={i} className="flex items-center gap-5">
+                      {" "}
+                      {/* <div className="bg-purple-300 px-3 py-3 lg:px-2 lg:py-2  rounded-full w-fit">
+                        <FaArrowRight />
+                      </div>{" "} */}
+                      {point}
+                    </li>
+                  ))}
+                </ol>
               </div>
               <div className="hidden lg:block rounded-xl overflow-hidden">
                 <video

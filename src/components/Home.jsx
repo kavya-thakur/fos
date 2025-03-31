@@ -7,7 +7,7 @@ import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-
+import { FaArrowRight } from "react-icons/fa";
 const Home = () => {
   const words = ["Frontend", "Backend", "DevOps"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -78,12 +78,16 @@ const Home = () => {
       <section>
         <div className="relative overflow-hidden">
           <GridBackgroundDemo />
-        
+
           <div className="container absolute z-10  inset-0 mx-auto px-4 ">
             <div className="pt-[40vw] md:pt-[40vw] lg:pt-[10vw] 2xl:max-pt-[40vw]">
               <div className="lg:max-w-[80%] md:max-w-[70%] flex justify-center items-center mx-auto">
                 <h1 className="bg-gradient-to-br from-slate-50 to-zinc-400 bg-clip-text text-transparent font-extrabold text-[11vw] md:text-[6.5vw] text-center tracking-tight leading-none ">
-                  One <span className="bg-[linear-gradient(316deg,#3e187a_0%,#994ecc_74%)] text-transparent bg-clip-text">search</span> bar for your projects
+                  One{" "}
+                  <span className="bg-[linear-gradient(316deg,#3e187a_0%,#994ecc_74%)] text-transparent bg-clip-text">
+                    search
+                  </span>{" "}
+                  bar for your projects
                 </h1>
               </div>
 
@@ -129,11 +133,21 @@ const Home = () => {
         </div>
 
         {/* login page  */}
-        
       </section>
       <Stepwrapper />
       <Productshowcase />
       <Testimonials />
+      <div className="bg-[#3e187a] bg-gradient-to-br from-[#3e187a] to-[#994ecc] text-white px-10 md:py-22 py-8 text-center flex flex-col gap-5 rounded-2xl my-10 md:mb-40 max-w-7xl mx-auto">
+        <div className="flex flex-col gap-5">
+          <h2 className="text-[2rem] md:text-[3.4rem] leading-none font-extrabold text-[#F5F7F8] lg:text-[4rem]">
+            Learn More about fosnix{" "}
+          </h2>
+          <p className="md:text-[1.2rem] lg:text-[1.5rem]">Let’s bring your vision to life—efficiently and flawlessly.</p>
+        </div>
+        <div className="flex justify-center md:pt-5">
+          <button className="px-5 py-2 lg:px-7 lg:py-3 lg:text-lg bg-white text-black rounded-full flex items-center gap-5 justify-between text-sm">Explore More <div className="bg-purple-300 px-3 py-3 lg:px-5 lg:py-5  rounded-full"><FaArrowRight /></div> </button>
+        </div>
+      </div>
       <Footer />
     </>
   );
