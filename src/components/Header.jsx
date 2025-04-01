@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
-
+import dropdownicon from '../assets/dropdown_icon.png'
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For mobile dropdown
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen); // Toggle the mobile dropdown
+  const [dropdown, setdropdown] = useState(false);
+  const dropdowntoggle = () => setdropdown(!dropdown);
 
   return (
     <header className="fixed left-0 right-0 z-20 top-0 text-white">
@@ -31,72 +33,93 @@ const Header = () => {
 
           {/* Services Dropdown for Desktop */}
           <div className="group relative">
-            <h2 className="cursor-pointer">Services</h2>
+            <button className="btn cursor-pointer flex items-center gap-2" onClick={dropdowntoggle}>
+              Services{" "}
+              <img
+                src={dropdownicon}
+                className={`h-4 cursor-pointer ${dropdown ? 'rotate-90' : ''} transition-all`} 
+                alt=""
+              />
+            </button>
 
             {/* Desktop Dropdown Menu */}
-            <div className="max-w-7xl absolute hidden group-hover:block top-full -right-20  w-[80vw] bg-[#242423] pt-7 shadow-lg py-4 z-50 rounded-xl h-96 mx-auto">
-              <div className="flex justify-around text-white mx-auto items-center">
-                {/* Training Column */}
-                <div>
-                  <Link onClick={()=>setIsOpen(false)} to={"/category/training"}>
-                    <h3 className="font-semibold text-white md:text-xl">
-                      Training
-                    </h3>
-                  </Link>
-                  <ul className="hidden md:block mt-4 space-y-7 font-medium text-neutral-400">
-                    <li>Frontend Development</li>
-                    <li>Backend Development</li>
-                    <li>Full Stack Development</li>
-                    <li>Mobile App Development</li>
-                  </ul>
-                </div>
+            {dropdown && (
+              <div className="transition-all max-w-7xl absolute hidden md:block top-full -right-20  w-[80vw] bg-[#242423] pt-7 shadow-lg py-4 z-50 rounded-xl h-96 mx-auto mt-10">
+                <div className="flex justify-around text-white mx-auto items-center">
+                  {/* Training Column */}
+                  <div>
+                    <Link
+                      onClick={() => setdropdown(false)}
+                      to={"/category/training"}
+                    >
+                      <h3 className="font-semibold text-white md:text-xl">
+                        Training
+                      </h3>
+                    </Link>
+                    <ul className="hidden md:block mt-4 space-y-7 font-medium text-neutral-400">
+                      <li>Frontend Development</li>
+                      <li>Backend Development</li>
+                      <li>Full Stack Development</li>
+                      <li>Mobile App Development</li>
+                    </ul>
+                  </div>
 
-                {/* Development Column */}
-                <div>
-                  <Link onClick={()=>setIsOpen(false)}  to={"/category/development"}>
-                    <h3 className="font-semibold text-white md:text-xl">
-                      Development
-                    </h3>
-                  </Link>
-                  <ul className="space-y-7 mt-4 font-medium text-neutral-400">
-                    <li>Frontend</li>
-                    <li>Backend</li>
-                    <li>Full Stack</li>
-                    <li>DevOps</li>
-                  </ul>
-                </div>
+                  {/* Development Column */}
+                  <div>
+                    <Link
+                      onClick={() => setdropdown(false)}
+                      to={"/category/development"}
+                    >
+                      <h3 className="font-semibold text-white md:text-xl">
+                        Development
+                      </h3>
+                    </Link>
+                    <ul className="space-y-7 mt-4 font-medium text-neutral-400">
+                      <li>Frontend</li>
+                      <li>Backend</li>
+                      <li>Full Stack</li>
+                      <li>DevOps</li>
+                    </ul>
+                  </div>
 
-                {/* UI/UX Column */}
-                <div>
-                  <Link onClick={()=>setIsOpen(false)} to={"/category/uiux"}>
-                    <h3 className="font-semibold text-white md:text-xl">
-                      UI/UX
-                    </h3>
-                  </Link>
-                  <ul className="space-y-7 mt-4 font-medium text-neutral-400">
-                    <li>Web Design</li>
-                    <li>App Design</li>
-                    <li>Prototyping</li>
-                    <li>Wireframing</li>
-                  </ul>
-                </div>
+                  {/* UI/UX Column */}
+                  <div>
+                    <Link
+                      onClick={() => setdropdown(false)}
+                      to={"/category/uiux"}
+                    >
+                      <h3 className="font-semibold text-white md:text-xl">
+                        UI/UX
+                      </h3>
+                    </Link>
+                    <ul className="space-y-7 mt-4 font-medium text-neutral-400">
+                      <li>Web Design</li>
+                      <li>App Design</li>
+                      <li>Prototyping</li>
+                      <li>Wireframing</li>
+                    </ul>
+                  </div>
 
-                {/* DevOps & Cloud Column */}
-                <div>
-                  <Link onClick={()=>setIsOpen(false)} to={"/category/devops"}>
-                    <h3 className="font-semibold text-white md:text-xl">
-                      DevOps & Cloud
-                    </h3>
-                  </Link>
-                  <ul className="space-y-7 mt-4 font-medium text-neutral-400">
-                    <li>CI/CD</li>
-                    <li>AWS</li>
-                    <li>Docker</li>
-                    <li>Kubernetes</li>
-                  </ul>
+                  {/* DevOps & Cloud Column */}
+                  <div>
+                    <Link
+                      onClick={() => setdropdown(false)}
+                      to={"/category/devops"}
+                    >
+                      <h3 className="font-semibold text-white md:text-xl">
+                        DevOps & Cloud
+                      </h3>
+                    </Link>
+                    <ul className="space-y-7 mt-4 font-medium text-neutral-400">
+                      <li>CI/CD</li>
+                      <li>AWS</li>
+                      <li>Docker</li>
+                      <li>Kubernetes</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
 
           <Link to="/login">
@@ -116,8 +139,12 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-white/70 border border-black/30 p-4 m-1 rounded-xl mt-2 px-2">
           <div className="flex flex-col gap-2 text-black/70">
-            <Link onClick={()=>setIsOpen(false)} to="/">Home</Link>
-            <Link onClick={()=>setIsOpen(false)} to="/about">About</Link>
+            <Link onClick={() => setIsOpen(false)} to="/">
+              Home
+            </Link>
+            <Link onClick={() => setIsOpen(false)} to="/about">
+              About
+            </Link>
 
             {/* Services Link for Mobile */}
             <div className="relative">
@@ -134,7 +161,10 @@ const Header = () => {
                   <div className="flex flex-col gap-6 px-4 text-white">
                     {/* Training Column */}
                     <div>
-                      <Link onClick={()=>setIsOpen(false)} to={"/category/training"}>
+                      <Link
+                        onClick={() => setIsOpen(false)}
+                        to={"/category/training"}
+                      >
                         <h3 className="font-semibold text-white md:text-xl">
                           Training
                         </h3>
@@ -143,7 +173,10 @@ const Header = () => {
 
                     {/* Development Column */}
                     <div>
-                      <Link onClick={()=>setIsOpen(false)} to={"/category/development"}>
+                      <Link
+                        onClick={() => setIsOpen(false)}
+                        to={"/category/development"}
+                      >
                         <h3 className="font-semibold text-white md:text-xl">
                           Development
                         </h3>
@@ -152,7 +185,10 @@ const Header = () => {
 
                     {/* UI/UX Column */}
                     <div>
-                      <Link onClick={()=>setIsOpen(false)} to={"/category/uiux"}>
+                      <Link
+                        onClick={() => setIsOpen(false)}
+                        to={"/category/uiux"}
+                      >
                         <h3 className="font-semibold text-white md:text-xl">
                           UI/UX
                         </h3>
@@ -160,7 +196,10 @@ const Header = () => {
                     </div>
 
                     {/* DevOps & Cloud Column */}
-                    <Link onClick={()=>setIsOpen(false)} to={"/category/devops"}>
+                    <Link
+                      onClick={() => setIsOpen(false)}
+                      to={"/category/devops"}
+                    >
                       <h3 className="font-semibold text-white md:text-xl">
                         DevOps & Cloud
                       </h3>
