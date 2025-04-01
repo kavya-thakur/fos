@@ -8,7 +8,9 @@ import LoginPage from "./components/LoginPage";
 
 import Home from "./components/Home";
 import LocomotiveScrollProvider from "./utils/locomotive";
-import Services from "./components/Services";
+
+import CategoryPage from "./components/CategoryPage";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -17,13 +19,14 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-
           <Route path="/description" element={<Description />} />
           <Route path="/submitted" element={<Submit />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/category/:category" element={<CategoryPage />} />{" "}
+          {/* ✅ Dynamic route */}
         </Routes>
+        <Footer />
       </LocomotiveScrollProvider>
 
       {/* <Description /> */}

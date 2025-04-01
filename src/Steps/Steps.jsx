@@ -19,8 +19,8 @@ const Steps = () => {
       heading: "Create and submit project",
       points: [
         "➕ Click 'Create Ticket' and fill in the details (Issue Type, Description, Costing Plan).",
-        "🖋 Submit the form to receive a unique Ticket ID.",
-        "🖋 An email confirmation will be sent with tracking details.",
+        "➕ Submit the form to receive a unique Ticket ID.",
+        "➕ An email confirmation will be sent with tracking details.",
       ],
       vid: firstvid,
     },

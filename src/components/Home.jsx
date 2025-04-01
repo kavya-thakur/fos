@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Stepwrapper from "./Stepwrapper";
 import Productshowcase from "./Productshowcase";
 import Testimonials from "./Testimonials";
-import Footer from "./Footer";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
@@ -148,7 +147,6 @@ const Home = () => {
           <button className="px-5 py-2 lg:px-7 lg:py-3 lg:text-lg bg-white text-black rounded-full flex items-center gap-5 justify-between text-sm">Explore More <div className="bg-purple-300 px-3 py-3 lg:px-5 lg:py-5  rounded-full"><FaArrowRight /></div> </button>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

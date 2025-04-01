@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import workimage from "../assets/workmockup.jpeg";
 import miss from "../assets/miss.png";
-import Footer from "./Footer";
 import Testimonials from "./Testimonials";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -147,7 +146,6 @@ const About = () => {
         </div>
       <Testimonials />
       </section>
-      <Footer />
     </>
   );
 };

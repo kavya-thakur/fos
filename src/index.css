@@ -55,3 +55,10 @@ body {
   background-color: #0f0f0f;
   transform-origin: top;
 }
+h3:hover{
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.752);
+}
+ul li:hover{
+  cursor: default;
+}
