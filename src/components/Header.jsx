@@ -44,7 +44,7 @@ const Header = () => {
 
             {/* Desktop Dropdown Menu */}
             {dropdown && (
-              <div className="transition-all max-w-7xl absolute hidden md:block top-full -right-20  w-[80vw] bg-[#242423] pt-7 shadow-lg py-4 z-50 rounded-xl h-96 mx-auto mt-10">
+              <div className="transition-all max-w-7xl absolute hidden md:block top-full -right-20  w-[80vw] bg-neutral-900 pt-7 shadow-lg py-4 z-50 rounded-xl h-96 mx-auto mt-10">
                 <div className="flex justify-around text-white mx-auto items-center">
                   {/* Training Column */}
                   <div>
@@ -121,6 +121,7 @@ const Header = () => {
               </div>
             )}
           </div>
+          <Link to="/blog">Blogs</Link>
 
           <Link to="/login">
             <div className="flex items-center">
