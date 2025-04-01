@@ -38,7 +38,7 @@ const Header = () => {
               <div className="flex justify-around text-white mx-auto items-center">
                 {/* Training Column */}
                 <div>
-                  <Link to={"/category/training"}>
+                  <Link onClick={()=>setIsOpen(false)} to={"/category/training"}>
                     <h3 className="font-semibold text-white md:text-xl">
                       Training
                     </h3>
@@ -53,7 +53,7 @@ const Header = () => {
 
                 {/* Development Column */}
                 <div>
-                  <Link to={"/category/development"}>
+                  <Link onClick={()=>setIsOpen(false)}  to={"/category/development"}>
                     <h3 className="font-semibold text-white md:text-xl">
                       Development
                     </h3>
@@ -68,7 +68,7 @@ const Header = () => {
 
                 {/* UI/UX Column */}
                 <div>
-                  <Link to={"/category/uiux"}>
+                  <Link onClick={()=>setIsOpen(false)} to={"/category/uiux"}>
                     <h3 className="font-semibold text-white md:text-xl">
                       UI/UX
                     </h3>
@@ -83,7 +83,7 @@ const Header = () => {
 
                 {/* DevOps & Cloud Column */}
                 <div>
-                  <Link to={"/category/devops"}>
+                  <Link onClick={()=>setIsOpen(false)} to={"/category/devops"}>
                     <h3 className="font-semibold text-white md:text-xl">
                       DevOps & Cloud
                     </h3>
@@ -116,8 +116,8 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-white/70 border border-black/30 p-4 m-1 rounded-xl mt-2 px-2">
           <div className="flex flex-col gap-2 text-black/70">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
+            <Link onClick={()=>setIsOpen(false)} to="/">Home</Link>
+            <Link onClick={()=>setIsOpen(false)} to="/about">About</Link>
 
             {/* Services Link for Mobile */}
             <div className="relative">
@@ -134,7 +134,7 @@ const Header = () => {
                   <div className="flex flex-col gap-6 px-4 text-white">
                     {/* Training Column */}
                     <div>
-                      <Link to={"/category/training"}>
+                      <Link onClick={()=>setIsOpen(false)} to={"/category/training"}>
                         <h3 className="font-semibold text-white md:text-xl">
                           Training
                         </h3>
@@ -143,7 +143,7 @@ const Header = () => {
 
                     {/* Development Column */}
                     <div>
-                      <Link to={"/category/development"}>
+                      <Link onClick={()=>setIsOpen(false)} to={"/category/development"}>
                         <h3 className="font-semibold text-white md:text-xl">
                           Development
                         </h3>
@@ -152,7 +152,7 @@ const Header = () => {
 
                     {/* UI/UX Column */}
                     <div>
-                      <Link to={"/category/uiux"}>
+                      <Link onClick={()=>setIsOpen(false)} to={"/category/uiux"}>
                         <h3 className="font-semibold text-white md:text-xl">
                           UI/UX
                         </h3>
@@ -160,7 +160,7 @@ const Header = () => {
                     </div>
 
                     {/* DevOps & Cloud Column */}
-                    <Link to={"/category/devops"}>
+                    <Link onClick={()=>setIsOpen(false)} to={"/category/devops"}>
                       <h3 className="font-semibold text-white md:text-xl">
                         DevOps & Cloud
                       </h3>
