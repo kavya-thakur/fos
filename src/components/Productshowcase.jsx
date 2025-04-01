@@ -95,13 +95,13 @@ const Productshowcase = () => {
         </div>
 
         {/* Heading */}
-        <div className="animate-item text-center font-extrabold text-4xl md:text-4xl lg:text-7xl tracking-tighter text-white/70 capitalize leading-none">
+        <div className="animate-item text-center font-extrabold text-4xl md:text-4xl lg:text-6xl tracking-tighter text-white/70 capitalize leading-none">
           A more effective way <br />
           <span className="text-purple-500">track</span> progress
         </div>
 
         {/* Paragraph */}
-        <p className="animate-item text-center text-sm text-white/80 md:text-lg ">
+        <p className="animate-item text-center text-sm text-white/80 md:text-md ">
           Effortlessly turn your ideas into a fully functional, responsive, SaaS
           website in minutes with beautiful design.
         </p>

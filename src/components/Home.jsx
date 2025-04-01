@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import Features from "./Features";
 const Home = () => {
   const words = ["Frontend", "Backend", "DevOps"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -135,6 +136,7 @@ const Home = () => {
       </section>
       <Stepwrapper />
       <Productshowcase />
+      <Features/>
       <Testimonials />
       <div className="bg-[#3e187a] bg-gradient-to-br from-[#3e187a] to-[#994ecc] text-white px-10 md:py-22 py-8 text-center flex flex-col gap-5 rounded-2xl my-10 md:mb-40 max-w-7xl mx-auto">
         <div className="flex flex-col gap-5">

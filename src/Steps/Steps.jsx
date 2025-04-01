@@ -64,7 +64,7 @@ const Steps = () => {
     <section className="sticky bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="pt-20 px-2 mb-10">
-          <h1 className="font-extrabold text-5xl tracking-tight text-center text-[#E3DAC9] md:text-[8rem]">
+          <h1 className="font-extrabold text-5xl tracking-tight text-center text-[#E3DAC9] md:text-7xl">
             Steps to{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3e187a] to-[#994ecc]">
               follow
