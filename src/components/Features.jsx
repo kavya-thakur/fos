@@ -185,7 +185,7 @@ export default function FeatureSection() {
       </div>
 
       {/* Feature Content */}
-      <div className="flex flex-col md:flex-row justify-center items-center max-w-5xl mx-auto mt-20 gap-20">
+      <div className="flex flex-col md:flex-row justify-center items-center max-w-5xl mx-auto mt-20 gap-10">
         <div className="">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-br from-[#f5f5f5] to-[#fffafa] bg-clip-text text-transparent">
             {activeFeature.title}
@@ -199,7 +199,7 @@ export default function FeatureSection() {
         <img
           src={activeFeature.image}
           alt={activeFeature.title}
-          className="rounded-lg shadow-md w-[450px]"
+          className="rounded-lg shadow-md w-[410px]"
         />
       </div>
 
