@@ -5,7 +5,6 @@ import nodejs from "../assets/nodejs.svg";
 import php from "../assets/php.svg";
 import python from "../assets/python.svg";
 import reactjs from "../assets/reactjs.svg";
-import nextjs from "../assets/nextjs.svg";
 import angular from "../assets/angular.svg";
 import vue from "../assets/vue.svg";
 import postgres from "../assets/postgresql.svg";
@@ -21,7 +20,7 @@ import wordpress from "../assets/wordpress.svg";
 const TechnologySection = () => {
   const images = [
     { id: 1, title: "Backend", img: [dotnet, nodejs, php, python] },
-    { id: 2, title: "Frontend", img: [angular, reactjs, nextjs, dotnet, vue] },
+    { id: 2, title: "Frontend", img: [angular, reactjs, dotnet, vue] },
     { id: 3, title: "Database", img: [mysql, mongodb, postgres] },
     { id: 4, title: "Mobile", img: [flutter, reactnative] },
     { id: 5, title: "CMS", img: [wordpress] },
@@ -62,14 +61,14 @@ const TechnologySection = () => {
         ))}
       </div>
 
-      <div className="flex flex-col gap-6 mt-10 tech-icons">
+      <div className="flex flex-col md:flex-row gap-6 mt-10 tech-icons">
         {activeFeature.img.map((icon, index) => (
           <div
             key={index}
             ref={(el) => (iconsRef.current[index] = el)}
-            className="bg-neutral-900 p-5 rounded-lg"
+            className="bg-neutral-900 border flex justify-center items-center p-5 rounded-lg h-90 w-90"
           >
-            <img src={icon} alt="" className="w-50 h-40 mx-auto" />
+            <img src={icon} alt="" className="w-50 h-36 mx-auto" />
           </div>
         ))}
       </div>
