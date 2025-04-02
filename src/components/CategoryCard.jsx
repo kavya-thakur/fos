@@ -1,45 +1,4 @@
-// import React from "react";
-// import { FaArrowRight } from "react-icons/fa";
-// import Testimonials from "./Testimonials";
 
-// const CategoryCard = ({ title, description, items, whyChooseUs }) => {
-//   return (
-//     <>
-//       <div className=" my-20">
-//         <div className="text-white/90">
-//           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#eae2b7]">{title}</h2>
-//           <p className="text-neutral-400 mb-6 md:text-lg">{description}</p>
-//           <h3 className="text-xl md:text-3xl font-semibold mb-4 mt-10 text-[#eae2b7]">
-//             Why Choose Us?
-//           </h3>
-//           <ul className="list-disc list-inside space-y-2 mb-5">
-//             {whyChooseUs.map((point, index) => (
-//               <p key={index} className="text-neutral-300">
-//                 {point}
-//               </p>
-//             ))}
-//           </ul>
-//           <h3 className="flex items-center gap-2 text-xl text-[#eae2b7] mt-10 mb-6">
-//             We offer <FaArrowRight className="" />{" "}
-//           </h3>
-//           <ul className="space-y-3">
-//             {items.map((item, index) => (
-//               <li
-//                 key={index}
-//                 className="bg-[#2a2a2a] p-3 rounded-lg hover:bg-[#333] transition duration-300"
-//               >
-//                 {item}
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       </div>
-//       <Testimonials />
-//     </>
-//   );
-// };
-
-// export default CategoryCard;
 import React, { useEffect } from "react";
 import { FaChevronRight, FaCheckCircle } from "react-icons/fa";
 import gsap from "gsap";
