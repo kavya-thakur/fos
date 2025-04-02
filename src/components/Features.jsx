@@ -154,7 +154,7 @@ export default function FeatureSection() {
   const [activeFeature, setActiveFeature] = useState(features[0]);
 
   return (
-    <div className="max-w-7xl py-20 mx-auto px-4 text-white shadow-lg rounded-lg">
+    <div className="max-w-7xl py-20 mx-auto px-4 text-white">
       <div className="flex flex-col gap-3 items-center text-center">
         <h1 className="text-3xl md:text-5xl border-b-4 border-purple-500 ">
           Features
@@ -185,7 +185,7 @@ export default function FeatureSection() {
       </div>
 
       {/* Feature Content */}
-      <div className="flex flex-col md:flex-row justify-center items-center max-w-5xl mx-auto mt-20 gap-10">
+      <div className="flex flex-col md:flex-row justify-center max-w-6xl mx-auto mt-20 gap-30">
         <div className="">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-br from-[#f5f5f5] to-[#fffafa] bg-clip-text text-transparent">
             {activeFeature.title}
@@ -199,7 +199,7 @@ export default function FeatureSection() {
         <img
           src={activeFeature.image}
           alt={activeFeature.title}
-          className="rounded-lg shadow-md w-[410px]"
+          className="rounded-lg shadow-md w-[400px]"
         />
       </div>
 
