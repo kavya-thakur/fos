@@ -7,9 +7,11 @@ const features = [
   {
     id: 1,
     title: "Hire Dedicated Resource",
-    description: `The Hire dedicated Resource Model is a popular model. In this model, Cogtix Solutions provides a dedicated team of professionals to work on the clients project or services for an agreed-upon period. The client pays for the number of hours worked on the project. 
-    
-    The client can quickly start their project without detailed requirements and can iterate over the requirement in an Agile fashion as time progresses. The client can also maintain full control and oversight as the project progresses as well as can also combine their onshore team with hired dedicated offshore staff.`,
+    description: `The Hire Dedicated Resource Model is a popular model. In this model, Fosnix provides a dedicated team of professionals to work on the client’s project or services for an agreed-upon period. The client pays for the number of hours worked on the project.
+
+The client can quickly start their project without detailed requirements and can iterate over the requirements in an Agile fashion as time progresses. The client can also maintain full control and oversight as the project progresses and can even combine their onshore team with hired dedicated offshore staff.
+
+`,
     image: featureher0,
     steps: [
       {
@@ -45,7 +47,9 @@ const features = [
   {
     id: 2,
     title: "Discovery Process Model",
-    description: `At Cogtix Solutions, we understand that successful IT consulting projects start with a thorough understanding of our clients' needs and objectives. That's why we've developed a comprehensive discovery process that is pre-development stage to help us gather the information we need to develop effective solutions. Our dedicated team of experts then collaborates closely with clients, leveraging their industry knowledge and our technical expertise to create innovative and customized solutions that align with their unique needs.`,
+    description: `At Fosnix, we understand that successful IT consulting projects start with a thorough understanding of our clients' needs and objectives. That’s why we’ve developed a comprehensive discovery process in the pre-development stage to gather the critical information needed to craft effective solutions.
+
+Our dedicated team of experts collaborates closely with clients, leveraging their industry knowledge and our technical expertise to create innovative and customized solutions that align with their unique business needs.`,
     image: img2,
     steps: [
       {
@@ -95,8 +99,9 @@ const features = [
   {
     id: 3,
     title: "Fixed Price Model",
-    description: `In this model, the client agrees upon a fixed price for a specific project or set of services. The scope of work, timeline, and deliverables are all defined in advance in detail, and any changes or additions to the project scope may result in additional charges or renegotiation of the fixed price.
-This model is suitable for clients who have a perfect vision of their requirements and do not anticipate frequent changes in them.`,
+    description: `In this model, the client agrees upon a fixed price for a specific project or set of services. The scope of work, timeline, and deliverables are all defined in advance in detail. Any changes or additions to the project scope may result in additional charges or a renegotiation of the fixed price.
+
+This model is ideal for clients who have a clear vision of their requirements and do not anticipate frequent changes throughout the project.`,
     image: fixedprice,
     steps: [
       {
@@ -151,7 +156,7 @@ export default function FeatureSection() {
   return (
     <div className="max-w-7xl py-20 mx-auto px-4 text-white shadow-lg rounded-lg">
       <div className="flex flex-col gap-3 items-center text-center">
-        <h1 className="text-3xl md:text-5xl text-purple-500">Features</h1>
+        <h1 className="text-3xl md:text-5xl border-b-4 border-purple-500">Features</h1>
         <h3 className="text-4xl">Partnership Models</h3>
         <p className="text-neutral-400  md:w-1/2">
           Fosnix is a leading website development company specializing in
@@ -202,7 +207,11 @@ export default function FeatureSection() {
           {activeFeature.steps.map((step) => (
             <div
               key={step.id}
-              className="h-80 w-80 bg-[#3e187a] bg-gradient-to-br from-[#3e187a] to-[#994ecc] text-black px-4 rounded-lg shadow-md text-center flex flex-col items-center justify-center"
+              className="featurecard h-80 w-80 bg-neutral-900 transition-all duration-300 ease-in-out 
+           hover:bg-gradient-to-br from-[#3e187a] to-[#994ecc] 
+           hover:scale-105 hover:shadow-lg hover:shadow-purple-700/50 
+           text-black px-4 rounded-lg shadow-md text-center flex flex-col items-center justify-center 
+           border border-purple-600/20"
             >
               <h1 className="text-black bg-white rounded px-5 py-3 font-extrabold mb-3">
                 {step.id}

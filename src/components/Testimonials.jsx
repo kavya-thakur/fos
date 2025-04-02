@@ -93,10 +93,10 @@ const Testimonials = () => {
             Testimonials
           </div>
         </div>
-        <h2 className="text-center font-extrabold text-4xl md:text-4xl lg:text-7xl tracking-tight bg-gradient-to-r from-neutral-300 to-stone-400 text-transparent bg-clip-text capitalize my-5">
+        <h2 className="text-center font-bold text-4xl md:text-4xl lg:text-6xl tracking-tight text-[#F5F7F8] bg-clip-text capitalize my-5">
           What our users say
         </h2>
-        <p className="text-center text-neutral-500 text-md mt-3 mb-3 lg:w-[37%] mx-auto">
+        <p className="text-center text-neutral-400 text-md mt-3 mb-3 lg:w-[37%] mx-auto">
           From intuitive design to powerful features, our web has become an
           essential platform for users around the world.
         </p>
