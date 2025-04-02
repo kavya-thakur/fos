@@ -66,7 +66,7 @@ const TechnologySection = () => {
           <div
             key={index}
             ref={(el) => (iconsRef.current[index] = el)}
-            className="bg-neutral-900 border flex justify-center items-center p-5 rounded-lg h-90 w-90"
+            className="bg-neutral-900 border flex justify-center items-center p-5 rounded-xl h-90 w-90 hover:scale-105 hover:shadow-xl hover:shadow-purple-700/50 transition-all duration-150 ease-in-out hover:border hover:border-purple-500/30 "
           >
             <img src={icon} alt="" className="w-50 h-36 mx-auto" />
           </div>

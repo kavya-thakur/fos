@@ -156,7 +156,9 @@ export default function FeatureSection() {
   return (
     <div className="max-w-7xl py-20 mx-auto px-4 text-white shadow-lg rounded-lg">
       <div className="flex flex-col gap-3 items-center text-center">
-        <h1 className="text-3xl md:text-5xl border-b-4 border-purple-500">Features</h1>
+        <h1 className="text-3xl md:text-5xl border-b-4 border-purple-500 ">
+          Features
+        </h1>
         <h3 className="text-4xl">Partnership Models</h3>
         <p className="text-neutral-400  md:w-1/2">
           Fosnix is a leading website development company specializing in
