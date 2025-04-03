@@ -12,7 +12,7 @@ const Footer = () => {
 
   useGSAP(
     () => {
-      if (!footerRef.current) return; // Prevent errors
+      // if (!footerRef.current) return; // Prevent errors
 
       const footerPs = footerRef.current.querySelectorAll(".footerp");
       const headings = footerRef.current.querySelectorAll(".fheading");
