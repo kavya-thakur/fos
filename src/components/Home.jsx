@@ -3,7 +3,6 @@ import { GridBackgroundDemo } from "./Background";
 import { motion } from "framer-motion";
 import Stepwrapper from "./Stepwrapper";
 import Productshowcase from "./Productshowcase";
-import Testimonials from "./Testimonials";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Features from "./Features";
@@ -139,7 +138,6 @@ const Home = () => {
       <Productshowcase />
       <Features />
       <TechnologySection/>
-      <Testimonials />
       <CTA />
     </>
   );

@@ -4,6 +4,7 @@ import { FaChevronRight, FaCheckCircle } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Testimonials from "./Testimonials";
+import Footer from "./Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +78,7 @@ const CategoryCard = ({ title, description, items, whyChooseUs }) => {
   }, [title]);
 
   return (
-    <div className="my-20 px-4 md:px-12 lg:px-20 mx-auto">
+    <div className="my-20 px-4 md:px-12 lg:px-20 ">
       <div className="text-white">
         <h2 className="title text-4xl md:text-5xl font-extrabold mb-6 text-[#d1d1d6]">
           {title}
@@ -115,7 +116,6 @@ const CategoryCard = ({ title, description, items, whyChooseUs }) => {
           ))}
         </div>
       </div>
-      <Testimonials />
     </div>
   );
 };
