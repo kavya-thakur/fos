@@ -1,15 +1,13 @@
-
 import React, { useEffect } from "react";
 import { FaChevronRight, FaCheckCircle } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Testimonials from "./Testimonials";
 import Footer from "./Footer";
+import Testimonials from "./Testimonials";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CategoryCard = ({ title, description, items, whyChooseUs }) => {
-
   useEffect(() => {
     // GSAP animation for the Title (letter by letter reveal)
     gsap.fromTo(
@@ -23,7 +21,7 @@ const CategoryCard = ({ title, description, items, whyChooseUs }) => {
         delay: 0.3,
         stagger: 0.1,
         // Animate letter by letter
-        text: { value: title, type: "chars" }
+        text: { value: title, type: "chars" },
       }
     );
 
@@ -50,7 +48,7 @@ const CategoryCard = ({ title, description, items, whyChooseUs }) => {
         duration: 0.8,
         ease: "power3.out",
         stagger: 0.3,
-        delay: 1.5
+        delay: 1.5,
       }
     );
 
@@ -64,7 +62,7 @@ const CategoryCard = ({ title, description, items, whyChooseUs }) => {
         duration: 0.8,
         ease: "power3.out",
         stagger: 0.2,
-        delay: 1.2
+        delay: 1.2,
       }
     );
 
@@ -78,45 +76,49 @@ const CategoryCard = ({ title, description, items, whyChooseUs }) => {
   }, [title]);
 
   return (
-    <div className="my-20 px-4 md:px-12 lg:px-20 ">
-      <div className="text-white">
-        <h2 className="title text-4xl md:text-5xl font-extrabold mb-6 text-[#d1d1d6]">
-          {title}
-        </h2>
-        <p className="description text-neutral-300 mb-8 md:text-lg leading-relaxed">
-          {description}
-        </p>
+    <>
+      <div className="my-20 px-4 md:px-12 lg:px-20 ">
+        <div className="text-white">
+          <h2 className="title text-4xl md:text-5xl font-extrabold mb-6 text-[#d1d1d6]">
+            {title}
+          </h2>
+          <p className="description text-neutral-300 mb-8 md:text-lg leading-relaxed">
+            {description}
+          </p>
 
-        <h3 className="why-choose-us text-2xl md:text-3xl font-semibold mb-6 mt-10 text-[#d1d1d6]">
-          Why Choose Us?
-        </h3>
-        <div className="why-choose-us">
-          {whyChooseUs.map((point, index) => (
-            <div
-              key={index}
-              className="why-choose-us-item flex items-center mb-4 text-neutral-300 text-lg"
-            >
-              <FaCheckCircle className="text-[#f8a700] mr-3" />
-              <p>{point}</p>
-            </div>
-          ))}
-        </div>
+          <h3 className="why-choose-us text-2xl md:text-3xl font-semibold mb-6 mt-10 text-[#d1d1d6]">
+            Why Choose Us?
+          </h3>
+          <div className="why-choose-us">
+            {whyChooseUs.map((point, index) => (
+              <div
+                key={index}
+                className="why-choose-us-item flex items-center mb-4 text-neutral-300 text-lg"
+              >
+                <FaCheckCircle className="text-[#f8a700] mr-3" />
+                <p>{point}</p>
+              </div>
+            ))}
+          </div>
 
-        <h3 className="flex items-center gap-3 text-2xl text-[#f8a700] mt-10 mb-6 font-semibold">
-          We Offer <FaChevronRight className="text-xl" />
-        </h3>
-        <div className="offer-list grid md:grid-cols-2 gap-4">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="item bg-[#333] p-4 rounded-lg hover:bg-[#444] transition duration-300 text-center font-medium text-lg shadow-lg border border-[#444]"
-            >
-              {item}
-            </div>
-          ))}
+          <h3 className="flex items-center gap-3 text-2xl text-[#f8a700] mt-10 mb-6 font-semibold">
+            We Offer <FaChevronRight className="text-xl" />
+          </h3>
+          <div className="offer-list grid md:grid-cols-2 gap-4">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="item bg-[#333] p-4 rounded-lg hover:bg-[#444] transition duration-300 text-center font-medium text-lg shadow-lg border border-[#444]"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Testimonials/>
+      <Footer/>
+    </>
   );
 };
 

@@ -10,8 +10,6 @@ import Home from "./components/Home";
 import LocomotiveScrollProvider from "./utils/locomotive";
 
 import CategoryPage from "./components/CategoryPage";
-import Footer from "./components/Footer";
-import Testimonials from "./components/Testimonials";
 
 const App = () => {
   return (
@@ -27,8 +25,6 @@ const App = () => {
           <Route path="/category/:category" element={<CategoryPage />} />{" "}
           {/* ✅ Dynamic route */}
         </Routes>
-        <Testimonials/>
-        <Footer />
       </LocomotiveScrollProvider>
 
       {/* <Description /> */}

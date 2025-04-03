@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import Features from "./Features";
 import CTA from "./CTA";
 import TechnologySection from "./TechnologySection";
+import Testimonials from "./Testimonials";
+import Footer from "./Footer";
 const Home = () => {
   const words = ["Frontend", "Backend", "DevOps"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -139,6 +141,8 @@ const Home = () => {
       <Features />
       <TechnologySection/>
       <CTA />
+      <Testimonials/>
+      <Footer/>
     </>
   );
 };
