@@ -7,7 +7,7 @@ import About from "./components/About";
 import LoginPage from "./components/LoginPage";
 
 import Home from "./components/Home";
-import LocomotiveScrollProvider from "./utils/locomotive";
+// import LocomotiveScrollProvider from "./utils/locomotive";
 
 import CategoryPage from "./components/CategoryPage";
 import Footer from "./components/Footer";
@@ -16,7 +16,7 @@ import Testimonials from "./components/Testimonials";
 const App = () => {
   return (
     <div className="">
-      <LocomotiveScrollProvider>
+      {/* <LocomotiveScrollProvider> */}
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,7 +29,7 @@ const App = () => {
         </Routes>
         <Testimonials/>
         <Footer />
-      </LocomotiveScrollProvider>
+      {/* </LocomotiveScrollProvider> */}
 
       {/* <Description /> */}
     </div>
