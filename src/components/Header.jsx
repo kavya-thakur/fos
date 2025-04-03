@@ -43,7 +43,7 @@ const Header = () => {
             </button>
 
             {/* Desktop Dropdown Menu */}
-              <div className="transition-all max-w-7xl absolute hidden group-hover:block top-full -right-20  w-[66vw] bg-neutral-900 pt-7 shadow-lg py-4 z-50 rounded-xl h-96 mx-auto">
+              <div className="transition-all max-w-7xl absolute hidden group-hover:block top-full -right-20  w-[70vw] bg-neutral-900 pt-7 shadow-lg py-4 z-50 rounded-xl h-[293px] mx-auto">
                 <div className="flex justify-around text-white mx-auto items-center">
                   {/* Training Column */}
                   <div>
