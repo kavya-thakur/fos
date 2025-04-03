@@ -1,69 +1,69 @@
 
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const footerRef = useRef(null); // Scoped reference for animation
 
-  useGSAP(
-    () => {
-      // if (!footerRef.current) return; // Prevent errors
+  // useGSAP(
+  //   () => {
+  //     if (!footerRef.current) return; // Prevent errors
 
-      const footerPs = footerRef.current.querySelectorAll(".footerp");
-      const headings = footerRef.current.querySelectorAll(".fheading");
-      const menus = footerRef.current.querySelectorAll(".menus");
+  //     const footerPs = footerRef.current.querySelectorAll(".footerp");
+  //     const headings = footerRef.current.querySelectorAll(".fheading");
+  //     const menus = footerRef.current.querySelectorAll(".menus");
 
-      gsap.from(footerPs, {
-        y: 60,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power2.out",
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 85%",
-          end: "top 40%",
-          scrub: 1.5,
-        },
-      });
+  //     gsap.from(footerPs, {
+  //       y: 60,
+  //       opacity: 0,
+  //       duration: 1.2,
+  //       ease: "power2.out",
+  //       stagger: 0.3,
+  //       scrollTrigger: {
+  //         trigger: footerRef.current,
+  //         start: "top 85%",
+  //         end: "top 40%",
+  //         scrub: 1.5,
+  //       },
+  //     });
 
-      gsap.from(headings, {
-        y: -50,
-        rotate: -10,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 85%",
-          end: "top 40%",
-          scrub: 1.5,
-        },
-      });
+  //     gsap.from(headings, {
+  //       y: -50,
+  //       rotate: -10,
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: "power2.out",
+  //       stagger: 0.2,
+  //       scrollTrigger: {
+  //         trigger: footerRef.current,
+  //         start: "top 85%",
+  //         end: "top 40%",
+  //         scrub: 1.5,
+  //       },
+  //     });
 
-      gsap.from(menus, {
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 85%",
-          end: "top 40%",
-          scrub: 1.5,
-        },
-      });
+  //     gsap.from(menus, {
+  //       opacity: 0,
+  //       duration: 0.8,
+  //       ease: "power2.out",
+  //       stagger: 0.3,
+  //       scrollTrigger: {
+  //         trigger: footerRef.current,
+  //         start: "top 85%",
+  //         end: "top 40%",
+  //         scrub: 1.5,
+  //       },
+  //     });
 
-      ScrollTrigger.refresh(); // Ensure animations work properly on load
-    },
-    { scope: footerRef }
-  );
+  //     ScrollTrigger.refresh(); // Ensure animations work properly on load
+  //   },
+  //   { scope: footerRef }
+  // );
 
   return (
     <footer ref={footerRef} className="footer w-full relative mx-auto">
