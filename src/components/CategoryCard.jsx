@@ -3,7 +3,6 @@ import { FaChevronRight, FaCheckCircle } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "./Footer";
-import Testimonials from "./Testimonials";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -116,7 +115,6 @@ const CategoryCard = ({ title, description, items, whyChooseUs }) => {
           </div>
         </div>
       </div>
-      <Testimonials/>
       <Footer/>
     </>
   );
