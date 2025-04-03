@@ -65,3 +65,7 @@ ul li:hover{
 /* .featurecard:hover {
   background-color: ;
 } */
+.footer {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
